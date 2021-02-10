@@ -16,7 +16,7 @@
         <Setter Property="HeadersVisibility" Value="Column" />
         <Setter Property="GridLinesVisibility" Value="None" />
       
-        <Setter Property="Background" Value="{StaticResource BrushMonochromatischGreen_D}" />
+        <Setter Property="Background" Value="{StaticResource BrushMonochromaticBlueGrayD}" />
     </Style>
 
     <Style TargetType="DataGridColumnHeader">
@@ -24,9 +24,9 @@
         <Setter Property="Margin" Value="0" />
         <Setter Property="Padding" Value="0" />
         <Setter Property="BorderThickness" Value="1 0 0 0" />
-        <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromatischGreen_D}" />
-        <Setter Property="Background" Value="{StaticResource BrushMonochromatischGreen_C}" />
-        <Setter Property="Foreground" Value="{StaticResource BrushMonochromatischGreen_D}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromaticBlueGrayD}" />
+        <Setter Property="Background" Value="{StaticResource BrushMonochromaticBlueGrayC}" />
+        <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayD}" />
         
     </Style>
 
@@ -38,9 +38,9 @@
         <Setter Property="Padding" Value="0" />
         <Setter Property="Height" Value="20" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromatischGreen_D}" />
-        <Setter Property="Background" Value="{StaticResource BrushMonochromatischGreen_D}" />
-        <Setter Property="Foreground" Value="{StaticResource BrushMonochromatischGreen_E}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromaticBlueGrayD}" />
+        <Setter Property="Background" Value="{StaticResource BrushMonochromaticBlueGrayD}" />
+        <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayE}" />
     </Style>
 
     <Style TargetType="DataGridRow">
@@ -50,8 +50,8 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="BorderThickness" Value="0 1 0 1" />
-                <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromatischGreen_C}" />
-                <Setter Property="Foreground" Value="{StaticResource BrushMonochromatischGreen_E}" />
+                <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromaticBlueGrayC}" />
+                <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayE}" />
             </Trigger>
 
             <!--<MultiTrigger>
@@ -77,16 +77,16 @@
             <Setter Property="Padding" Value="0" />
             <Setter Property="Margin" Value="0" />
             <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromatischGreen_E}" />
+            <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromaticBlueGrayE}" />
             <Setter Property="Background" Value="Transparent" />
-            <Setter Property="Foreground" Value="{StaticResource BrushMonochromatischGreen_C}" />
+            <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayC}" />
         </Style.Setters>
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
                 <Setter Property="BorderThickness" Value="1 1 0 1" />
-                <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromatischGreen_D}" />
-                <Setter Property="Background" Value="{StaticResource BrushMonochromatischGreen_C}"/>
-                <Setter Property="Foreground" Value="{StaticResource BrushMonochromatischGreen_D}" />
+                <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromaticBlueGrayD}" />
+                <Setter Property="Background" Value="{StaticResource BrushMonochromaticBlueGrayC}"/>
+                <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayD}" />
             </Trigger>
             <!--<Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="{StaticResource BrushMonochromatischGreen_A}"/>

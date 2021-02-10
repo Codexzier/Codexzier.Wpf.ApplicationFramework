@@ -12,7 +12,7 @@
     <Style x:Key="CheckBoxBase" TargetType="CheckBox" BasedOn="{x:Null}">
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="OverridesDefaultStyle" Value="true" />
-        <Setter Property="Foreground" Value="{StaticResource BrushMonochromatischGreen_C}" />
+        <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayC}" />
         <Setter Property="ToolTipService.ShowOnDisabled" Value="True" />
         <Setter Property="Height" Value="24" />
     </Style>
@@ -21,7 +21,7 @@
     <Style x:Key="ContextMenuCheckBoxDefault" 
            TargetType="{x:Type CheckBox}" 
            BasedOn="{StaticResource CheckBoxBase}">
-        <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromatischGreen_D}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromaticBlueGrayD}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CheckBox}">
@@ -33,7 +33,7 @@
                                         Width="13"
                                         Height="13"
                                         CornerRadius="0"
-                                        Background="{StaticResource BrushMonochromatischGreen_B}"
+                                        Background="{StaticResource BrushMonochromaticBlueGrayB}"
                                         BorderThickness="1"
                                         BorderBrush="{TemplateBinding BorderBrush}"
                                         Opacity="1">
@@ -41,7 +41,7 @@
                                         Width="9" Height="9"
                                         x:Name="CheckMark"
                                         SnapsToDevicePixels="False"
-                                        Stroke="{StaticResource BrushMonochromatischGreen_D}"
+                                        Stroke="{StaticResource BrushMonochromaticBlueGrayD}"
                                         StrokeThickness="2"
                                         Data="M 1 4 L 4 9 L 9 0"
                                         Opacity="1" />
@@ -64,15 +64,15 @@
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter TargetName="Border" 
                                     Property="BorderBrush"
-                                    Value="{StaticResource BrushMonochromatischGreen_B}" />
+                                    Value="{StaticResource BrushMonochromaticBlueGrayB}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter TargetName="Border" 
                                     Property="Background" 
-                                    Value="{StaticResource BrushMonochromatischGreen_D}" />
+                                    Value="{StaticResource BrushMonochromaticBlueGrayD}" />
                             <Setter TargetName="Border" 
                                     Property="BorderBrush"
-                                    Value="{StaticResource BrushMonochromatischGreen_A}" />
+                                    Value="{StaticResource BrushMonochromaticBlueGrayA}" />
                             <Setter TargetName="CheckMark" 
                                     Property="Visibility" 
                                     Value="Visible" />
@@ -83,7 +83,7 @@
                                     Value="0.5" />
                             <Setter TargetName="Border" 
                                     Property="BorderBrush"
-                                    Value="{StaticResource BrushMonochromatischGreen_D}" />
+                                    Value="{StaticResource BrushMonochromaticBlueGrayD}" />
                             <Setter TargetName="Border" 
                                     Property="Background" 
                                     Value="Gray" />
@@ -136,12 +136,12 @@
                             <!--<Setter TargetName="PathIconState" Property="Opacity" Value=".9" />-->
                             <Setter TargetName="PathIconState" 
                                     Property="Fill"
-                                    Value="{StaticResource BrushMonochromatischGreen_E}" />
+                                    Value="{StaticResource BrushMonochromaticBlueGrayE}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter TargetName="PathIconState" 
                                     Property="Fill"
-                                    Value="{StaticResource BrushMonochromatischGreen_C}" />
+                                    Value="{StaticResource BrushMonochromaticBlueGrayC}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="PathIconState" 
@@ -149,7 +149,7 @@
                                     Value="0.5" />
                             <Setter TargetName="PathIconState" 
                                     Property="Fill"
-                                    Value="{StaticResource BrushMonochromatischGreen_D}" />
+                                    Value="{StaticResource BrushMonochromaticBlueGrayD}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

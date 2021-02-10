@@ -7,9 +7,12 @@
                d:DesignHeight="200" d:DesignWidth="300"
              MinHeight="200" MinWidth="300" 
               SizeChanged="UserControl_SizeChanged">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../Styles/Brushes.xaml" />
+    </UserControl.Resources>
     <Grid>
         <Border BorderThickness="1" 
-                BorderBrush="{StaticResource BrushMonochromatischGreen_E}" 
+                BorderBrush="{StaticResource BrushMonochromaticBlueGrayE}" 
                 Margin="20 0 0 0">
             <StackPanel x:Name="SimpleDiagram" 
                     Orientation="Horizontal" 
@@ -18,7 +21,7 @@
         </Border>
 
         <TextBlock x:Name="OneHundredText" Text="100" 
-                   Foreground="{StaticResource BrushMonochromatischGreen_E}"
+                   Foreground="{StaticResource BrushMonochromaticBlueGrayE}"
                    HorizontalAlignment="Left" 
                    VerticalAlignment="Bottom" 
                    FontSize="9"
@@ -26,7 +29,7 @@
         <Path x:Name="OneHundred" 
               Width="20"
               Data="M 0,0 20,0 z"
-              Stroke="{StaticResource BrushMonochromatischGreen_E}" 
+              Stroke="{StaticResource BrushMonochromaticBlueGrayE}" 
               StrokeThickness="2" 
               HorizontalAlignment="Left" 
               VerticalAlignment="Bottom" 

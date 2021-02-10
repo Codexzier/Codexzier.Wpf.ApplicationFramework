@@ -4,12 +4,12 @@
         <ResourceDictionary Source="/CodexzierSimpleApplicationFramework;component/Styles/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <!-- Brush scheme: Monochromatisch green -->
-    <SolidColorBrush x:Key="BrushMonochromatischGreen_A" Color="{StaticResource ColorMonochromatischGreen_A}" />
-    <SolidColorBrush x:Key="BrushMonochromatischGreen_B" Color="{StaticResource ColorMonochromatischGreen_B}" />
-    <SolidColorBrush x:Key="BrushMonochromatischGreen_C" Color="{StaticResource ColorMonochromatischGreen_C}" />
-    <SolidColorBrush x:Key="BrushMonochromatischGreen_D" Color="{StaticResource ColorMonochromatischGreen_D}" />
-    <SolidColorBrush x:Key="BrushMonochromatischGreen_E" Color="{StaticResource ColorMonochromatischGreen_E}" />
+    <!-- Brush scheme: Monochromatic blue gray -->
+    <SolidColorBrush x:Key="BrushMonochromaticBlueGrayA" Color="{StaticResource ColorMonochromaticBlueGrayA}" />
+    <SolidColorBrush x:Key="BrushMonochromaticBlueGrayB" Color="{StaticResource ColorMonochromaticBlueGrayB}" />
+    <SolidColorBrush x:Key="BrushMonochromaticBlueGrayC" Color="{StaticResource ColorMonochromaticBlueGrayC}" />
+    <SolidColorBrush x:Key="BrushMonochromaticBlueGrayD" Color="{StaticResource ColorMonochromaticBlueGrayD}" />
+    <SolidColorBrush x:Key="BrushMonochromaticBlueGrayE" Color="{StaticResource ColorMonochromaticBlueGrayE}" />
 
 
     <SolidColorBrush x:Key="BrushButtonTransparentBlack" Color="{StaticResource ColorButtonTransparentBlack}" />
