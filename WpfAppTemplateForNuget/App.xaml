@@ -1,0 +1,33 @@
+﻿<Application x:Class="WpfAppTemplateForNuget.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/CodexzierSimpleApplicationFramework;component/Styles/DefaultSetup.xaml" />
+                <ResourceDictionary Source="/CodexzierSimpleApplicationFramework;component/Styles/Buttons.xaml" />
+                <ResourceDictionary Source="/CodexzierSimpleApplicationFramework;component/Styles/Icons.xaml" />
+                <ResourceDictionary Source="/CodexzierSimpleApplicationFramework;component/Styles/DataGrid.xaml" />
+                <ResourceDictionary Source="/CodexzierSimpleApplicationFramework;component/Styles/TextBoxes.xaml" />
+                <ResourceDictionary Source="/CodexzierSimpleApplicationFramework;component/Styles/Checkboxes.xaml" />
+                <ResourceDictionary Source="/CodexzierSimpleApplicationFramework;component/Styles/TextBlocks.xaml" />
+                <ResourceDictionary Source="/CodexzierSimpleApplicationFramework;component/Styles/ProgressBar.xaml" />
+
+                <ResourceDictionary Source="/WpfAppTemplateForNuget;component/Converters/Converters.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="PasswordBox">
+                <Setter Property="Margin" Value="5 2" />
+            </Style>
+
+            <Style TargetType="RichTextBox">
+                <Setter Property="Margin" Value="5 2" />
+            </Style>
+
+            
+        </ResourceDictionary>
+        
+    </Application.Resources>
+</Application>
