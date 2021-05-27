@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Codexzier.Wpf.ApplicationFramework.Components.Database
 {
+    [Obsolete("SQLite muss ich nochmal prüfen.")]
     public class DatabaseQueryCreator
     {
         #region TABLE Create and Exist Querys

@@ -6,23 +6,27 @@ namespace Codexzier.Wpf.ApplicationFramework.Components.UserSettings
     public class UserSettingsLoader<TSettingsFile> : IUserSettingsComponent<TSettingsFile> where TSettingsFile : ISettingsFile
     {
         private static UserSettingsLoader<TSettingsFile> _userSettings;
-        private readonly string _settingFile = $"{Environment.CurrentDirectory}\\settings.json";
+        private readonly string _settingFile;
+        private Func<TSettingsFile, string> _serialize;
+        private Func<string, ISettingsFile> _deserialize;
 
         public UserSettingsLoader(
             Func<TSettingsFile, string> serialize,
-            Func<string, ISettingsFile> deserialize)
+            Func<string, ISettingsFile> deserialize, 
+            string filename)
         {
             this._serialize = serialize;
             this._deserialize = deserialize;
+            this._settingFile = $"{Environment.CurrentDirectory}\\{filename}";
         }
 
         public static UserSettingsLoader<TSettingsFile> GetInstance(
             Func<TSettingsFile, string> serialize,
-            Func<string, ISettingsFile> deserialize) 
-            => _userSettings ??= new UserSettingsLoader<TSettingsFile>(serialize, deserialize);
+            Func<string, ISettingsFile> deserialize,
+            string filename = "defaultSettings") 
+            => _userSettings ??= new UserSettingsLoader<TSettingsFile>(serialize, deserialize, filename);
 
-        private Func<TSettingsFile, string> _serialize;
-        private Func<string, ISettingsFile> _deserialize;
+       
 
         public TSettingsFile Load()
         {
@@ -36,7 +40,6 @@ namespace Codexzier.Wpf.ApplicationFramework.Components.UserSettings
             var fileContent = File.ReadAllText(this._settingFile);
 
             var setting = this._deserialize.Invoke(fileContent);
-            //JsonConvert.DeserializeObject<TSettingFile>(fileContent);
             setting.NoChanged();
             return (TSettingsFile)setting;
         }
@@ -49,7 +52,6 @@ namespace Codexzier.Wpf.ApplicationFramework.Components.UserSettings
             }
 
             var toSave = this._serialize.Invoke(firstSetting);
-            //JsonConvert.SerializeObject(firstSetting);
             File.WriteAllText(this._settingFile, toSave);
         }
     }

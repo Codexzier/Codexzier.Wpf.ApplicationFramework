@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Codexzier.Wpf.ApplicationFramework" Version="0.1.0" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="5.0.2" />
     <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="5.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
@@ -18,6 +17,10 @@
 
   <ItemGroup>
     <Folder Include="Assets\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Codexzier.Wpf.ApplicationFramework\Codexzier.Wpf.ApplicationFramework.csproj" />
   </ItemGroup>
 
 </Project>
