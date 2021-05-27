@@ -1,12 +1,12 @@
-﻿using CodexzierSimpleApplicationFramework.Commands;
-using CodexzierSimpleApplicationFramework.Components.Ui.Anims;
-using CodexzierSimpleApplicationFramework.Components.Ui.EventBus;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
-using CodexzierSimpleApplicationFramework.Controls.Diagram;
+using Codexzier.Wpf.ApplicationFramework.Commands;
+using Codexzier.Wpf.ApplicationFramework.Components.Ui.Anims;
+using Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus;
+using Codexzier.Wpf.ApplicationFramework.Controls.Diagram;
 using WpfAppTemplateForNuget.Components.Data;
 using WpfAppTemplateForNuget.Views.Data;
 using WpfAppTemplateForNuget.Views.RenderPicture;

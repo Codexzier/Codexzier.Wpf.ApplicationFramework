@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
-using CodexzierSimpleApplicationFramework.Views.Base;
+using Codexzier.Wpf.ApplicationFramework.Views.Base;
 using WpfAppTemplateForNuget.Views.Base;
 using WpfAppTemplateForNuget.Views.Data;
 

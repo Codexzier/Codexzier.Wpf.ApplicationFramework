@@ -1,5 +1,5 @@
-﻿using CodexzierSimpleApplicationFramework.Views.Base;
-using System.Windows.Input;
+﻿using System.Windows.Input;
+using Codexzier.Wpf.ApplicationFramework.Views.Base;
 
 namespace WpfAppTemplateForNuget.Views.Setup
 {

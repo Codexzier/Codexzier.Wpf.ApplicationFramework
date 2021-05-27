@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using CodexzierSimpleApplicationFramework.Components.UserSettings;
+using Codexzier.Wpf.ApplicationFramework.Components.UserSettings;
 using WpfAppTemplateForNuget.Components.Data;
 using WpfAppTemplateForNuget.Components.UserSettings;
 
@@ -25,7 +25,9 @@ namespace WpfAppTemplateForNuget.Components.RkiCoronaLandkreise
             saveIf = null;
             var filename = HelperExtension.CreateFilename();
 
-            if (!UserSettingsLoader.GetInstance().Load<CustomSettingsFile>().LoadRkiDataByApplicationStart &&
+            var usl = UserSettingsLoader<CustomSettingsFile>.GetInstance(SerializeHelper.Serialize, SerializeHelper.Deserialize);
+
+            if (!usl.Load().LoadRkiDataByApplicationStart &&
                 !loadForceFromInternet)
             {
                 filename = GetLastLoadedData();

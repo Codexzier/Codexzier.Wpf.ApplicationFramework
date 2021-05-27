@@ -1,6 +1,6 @@
-﻿using CodexzierSimpleApplicationFramework.Components.Ui.EventBus;
-using System;
+﻿using System;
 using System.Windows.Input;
+using Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus;
 using WpfAppTemplateForNuget.Views.County;
 using WpfAppTemplateForNuget.Views.Setup;
 

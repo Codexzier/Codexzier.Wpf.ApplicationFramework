@@ -1,8 +1,8 @@
-﻿using CodexzierSimpleApplicationFramework.Views.Base;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using Codexzier.Wpf.ApplicationFramework.Views.Base;
 using WpfAppTemplateForNuget.Views.Data;
 
 namespace WpfAppTemplateForNuget.Views.Main

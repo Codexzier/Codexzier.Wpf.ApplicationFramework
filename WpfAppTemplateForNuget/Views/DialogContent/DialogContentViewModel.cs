@@ -1,4 +1,4 @@
-﻿using CodexzierSimpleApplicationFramework.Views.Base;
+﻿using Codexzier.Wpf.ApplicationFramework.Views.Base;
 
 namespace WpfAppTemplateForNuget.Views.DialogContent
 {

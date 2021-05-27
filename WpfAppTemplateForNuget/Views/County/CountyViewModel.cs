@@ -1,7 +1,7 @@
-﻿using CodexzierSimpleApplicationFramework.Controls.Diagram;
-using CodexzierSimpleApplicationFramework.Views.Base;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows.Input;
+using Codexzier.Wpf.ApplicationFramework.Controls.Diagram;
+using Codexzier.Wpf.ApplicationFramework.Views.Base;
 using WpfAppTemplateForNuget.Views.Data;
 
 namespace WpfAppTemplateForNuget.Views.County

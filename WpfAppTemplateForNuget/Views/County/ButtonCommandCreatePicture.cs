@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
-using CodexzierSimpleApplicationFramework.Components.WpfRender;
-using CodexzierSimpleApplicationFramework.Views.Base;
-using WpfAppTemplateForNuget.Views.Base;
+using Codexzier.Wpf.ApplicationFramework.Components.WpfRender;
+using Codexzier.Wpf.ApplicationFramework.Views.Base;
 using WpfAppTemplateForNuget.Views.RenderPicture;
 
 namespace WpfAppTemplateForNuget.Views.County

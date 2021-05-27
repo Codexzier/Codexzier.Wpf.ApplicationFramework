@@ -1,5 +1,5 @@
-﻿using System.Windows.Controls;
-using CodexzierSimpleApplicationFramework.Components.UserSettings;
+﻿using Codexzier.Wpf.ApplicationFramework.Components.UserSettings;
+using WpfAppTemplateForNuget.Components;
 using WpfAppTemplateForNuget.Components.UserSettings;
 
 namespace WpfAppTemplateForNuget.Views.Setup
@@ -7,7 +7,7 @@ namespace WpfAppTemplateForNuget.Views.Setup
     /// <summary>
     /// Interaction logic for SetupView.xaml
     /// </summary>
-    public partial class SetupView : UserControl
+    public partial class SetupView
     {
         private readonly SetupViewModel _viewModel;
         public SetupView()
@@ -23,7 +23,7 @@ namespace WpfAppTemplateForNuget.Views.Setup
 
         public override void OnApplyTemplate()
         {
-            var setting = UserSettingsLoader.GetInstance().Load<CustomSettingsFile>();
+            var setting = UserSettingsLoader<CustomSettingsFile>.GetInstance(SerializeHelper.Serialize, SerializeHelper.Deserialize).Load();
             this._viewModel.LoadRkiDataByApplicationStart = setting.LoadRkiDataByApplicationStart;
         }
 

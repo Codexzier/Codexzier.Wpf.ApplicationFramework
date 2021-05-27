@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
-using CodexzierSimpleApplicationFramework.Views.Base;
+using Codexzier.Wpf.ApplicationFramework.Views.Base;
 using WpfAppTemplateForNuget.Components.RkiCoronaLandkreise;
 using WpfAppTemplateForNuget.Views.Base;
 

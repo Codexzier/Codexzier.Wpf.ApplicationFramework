@@ -1,12 +1,13 @@
-﻿using CodexzierSimpleApplicationFramework.Commands;
-using CodexzierSimpleApplicationFramework.Components.Ui.EventBus;
-using CodexzierSimpleApplicationFramework.Components.UserSettings;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Markup;
+using Codexzier.Wpf.ApplicationFramework.Commands;
+using Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus;
+using Codexzier.Wpf.ApplicationFramework.Components.UserSettings;
+using WpfAppTemplateForNuget.Components;
 using WpfAppTemplateForNuget.Components.LegacyData;
 using WpfAppTemplateForNuget.Components.UserSettings;
 using WpfAppTemplateForNuget.Views.Base;
@@ -27,7 +28,7 @@ namespace WpfAppTemplateForNuget
 
             this.Prepare();
 
-            var setting = UserSettingsLoader.GetInstance().Load<CustomSettingsFile>();
+            var setting = UserSettingsLoader<CustomSettingsFile>.GetInstance(SerializeHelper.Serialize, SerializeHelper.Deserialize).Load();
 
             this.LoadApplicationSize(setting);
             this.LoadApplicationWindowState(setting);
@@ -109,9 +110,8 @@ namespace WpfAppTemplateForNuget
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            var usl = UserSettingsLoader.GetInstance();
-
-            var file = usl.Load<CustomSettingsFile>();
+            var usl = UserSettingsLoader<CustomSettingsFile>.GetInstance(SerializeHelper.Serialize, SerializeHelper.Deserialize);
+            var file = usl.Load();
 
             file.ApplicationPositionX = (int)this.Left;
             file.ApplicationPositionY = (int)this.Top;

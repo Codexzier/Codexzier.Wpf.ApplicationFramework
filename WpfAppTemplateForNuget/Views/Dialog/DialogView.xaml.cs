@@ -1,6 +1,6 @@
-﻿using CodexzierSimpleApplicationFramework.Commands;
-using CodexzierSimpleApplicationFramework.Components.Ui.EventBus;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
+using Codexzier.Wpf.ApplicationFramework.Commands;
+using Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus;
 
 namespace WpfAppTemplateForNuget.Views.Dialog
 {

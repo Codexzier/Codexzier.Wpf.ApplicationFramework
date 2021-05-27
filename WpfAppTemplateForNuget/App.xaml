@@ -6,14 +6,14 @@
 
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/CodexzierSimpleApplicationFramework;component/Styles/DefaultSetup.xaml" />
-                <ResourceDictionary Source="/CodexzierSimpleApplicationFramework;component/Styles/Buttons.xaml" />
-                <ResourceDictionary Source="/CodexzierSimpleApplicationFramework;component/Styles/Icons.xaml" />
-                <ResourceDictionary Source="/CodexzierSimpleApplicationFramework;component/Styles/DataGrid.xaml" />
-                <ResourceDictionary Source="/CodexzierSimpleApplicationFramework;component/Styles/TextBoxes.xaml" />
-                <ResourceDictionary Source="/CodexzierSimpleApplicationFramework;component/Styles/Checkboxes.xaml" />
-                <ResourceDictionary Source="/CodexzierSimpleApplicationFramework;component/Styles/TextBlocks.xaml" />
-                <ResourceDictionary Source="/CodexzierSimpleApplicationFramework;component/Styles/ProgressBar.xaml" />
+                <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/DefaultSetup.xaml" />
+                <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/Buttons.xaml" />
+                <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/Icons.xaml" />
+                <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/DataGrid.xaml" />
+                <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/TextBoxes.xaml" />
+                <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/Checkboxes.xaml" />
+                <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/TextBlocks.xaml" />
+                <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/ProgressBar.xaml" />
 
                 <ResourceDictionary Source="/WpfAppTemplateForNuget;component/Converters/Converters.xaml" />
             </ResourceDictionary.MergedDictionaries>

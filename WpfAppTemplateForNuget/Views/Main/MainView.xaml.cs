@@ -1,11 +1,11 @@
-﻿using CodexzierSimpleApplicationFramework.Commands;
-using CodexzierSimpleApplicationFramework.Components.Ui.EventBus;
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Controls;
-using CodexzierSimpleApplicationFramework.Views.Base;
+using Codexzier.Wpf.ApplicationFramework.Commands;
+using Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus;
+using Codexzier.Wpf.ApplicationFramework.Views.Base;
 using WpfAppTemplateForNuget.Components.RkiCoronaLandkreise;
 using WpfAppTemplateForNuget.Views.Base;
 using WpfAppTemplateForNuget.Views.Data;

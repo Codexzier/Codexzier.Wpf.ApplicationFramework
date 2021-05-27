@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfAppTemplateForNuget.Views.RenderPicture"
-             xmlns:diagram="clr-namespace:CodexzierSimpleApplicationFramework.Controls.Diagram;assembly=CodexzierSimpleApplicationFramework"
+             xmlns:diagram1="clr-namespace:Codexzier.Wpf.ApplicationFramework.Controls.Diagram;assembly=Codexzier.Wpf.ApplicationFramework"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="800" 
              MinHeight="400" MinWidth="800"
@@ -48,7 +48,7 @@
         <TextBlock Grid.Column="2" Grid.Row="3" HorizontalAlignment="Right" Text="{Binding DistrictData.WeekIncidence, StringFormat=N1}" />
 
         <TextBlock Text="Week incidence" Grid.Column="0" Grid.Row="5"  />
-        <diagram:DiagramControl Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"
+        <diagram1:DiagramControl Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"
                                 DiagramLevelItemsSource="{Binding CountyResults}" 
                                 AnimationOn="False" 
                                 Width="672" Height="276" />

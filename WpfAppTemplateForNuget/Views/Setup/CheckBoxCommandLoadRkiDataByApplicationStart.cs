@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
-using CodexzierSimpleApplicationFramework.Components.UserSettings;
+using Codexzier.Wpf.ApplicationFramework.Components.UserSettings;
+using WpfAppTemplateForNuget.Components;
 using WpfAppTemplateForNuget.Components.UserSettings;
 
 namespace WpfAppTemplateForNuget.Views.Setup
@@ -16,8 +17,8 @@ namespace WpfAppTemplateForNuget.Views.Setup
         public bool CanExecute(object parameter) => true;
         public void Execute(object parameter)
         {
-            var userSettings = UserSettingsLoader.GetInstance();
-            var setting = userSettings.Load<CustomSettingsFile>();
+            var userSettings = UserSettingsLoader<CustomSettingsFile>.GetInstance(SerializeHelper.Serialize, SerializeHelper.Deserialize);
+            var setting = userSettings.Load();
 
             setting.LoadRkiDataByApplicationStart = this._viewModel.LoadRkiDataByApplicationStart;
 

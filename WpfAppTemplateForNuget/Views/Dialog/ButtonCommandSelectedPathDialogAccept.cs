@@ -1,8 +1,8 @@
-﻿using CodexzierSimpleApplicationFramework.Components.Ui.EventBus;
-using System;
+﻿using System;
 using System.IO;
 using System.Windows.Input;
-using CodexzierSimpleApplicationFramework.Views.Base;
+using Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus;
+using Codexzier.Wpf.ApplicationFramework.Views.Base;
 using WpfAppTemplateForNuget.Components.LegacyData;
 using WpfAppTemplateForNuget.Views.Base;
 

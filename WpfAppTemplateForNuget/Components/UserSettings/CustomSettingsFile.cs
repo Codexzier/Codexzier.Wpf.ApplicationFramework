@@ -1,6 +1,6 @@
 ﻿
 
-using CodexzierSimpleApplicationFramework.Components.UserSettings;
+using Codexzier.Wpf.ApplicationFramework.Components.UserSettings;
 
 namespace WpfAppTemplateForNuget.Components.UserSettings
 {
