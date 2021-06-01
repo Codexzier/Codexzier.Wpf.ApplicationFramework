@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfAppTemplateForNuget", "W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codexzier.Wpf.ApplicationFramework", "Codexzier.Wpf.ApplicationFramework\Codexzier.Wpf.ApplicationFramework.csproj", "{DDC158CB-08D5-47ED-BBE6-85BC8819E9E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codexzier.Wpf.ApplicationFramework.Test", "Codexzier.Wpf.ApplicationFramework.Test\Codexzier.Wpf.ApplicationFramework.Test.csproj", "{36EA1487-69EA-421E-9F41-C8B045C4B876}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DDC158CB-08D5-47ED-BBE6-85BC8819E9E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDC158CB-08D5-47ED-BBE6-85BC8819E9E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDC158CB-08D5-47ED-BBE6-85BC8819E9E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36EA1487-69EA-421E-9F41-C8B045C4B876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36EA1487-69EA-421E-9F41-C8B045C4B876}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36EA1487-69EA-421E-9F41-C8B045C4B876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36EA1487-69EA-421E-9F41-C8B045C4B876}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Codexzier.Wpf.ApplicationFramework\Codexzier.Wpf.ApplicationFramework.csproj" />
   </ItemGroup>
 
