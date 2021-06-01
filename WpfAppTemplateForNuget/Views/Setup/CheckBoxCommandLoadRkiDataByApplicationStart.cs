@@ -1,7 +1,7 @@
 ﻿using Codexzier.Wpf.ApplicationFramework.Components.UserSettings;
+using Codexzier.Wpf.ApplicationFramework.Views.Base;
 using WpfAppTemplateForNuget.Components;
 using WpfAppTemplateForNuget.Components.UserSettings;
-using WpfAppTemplateForNuget.Views.Base;
 
 namespace WpfAppTemplateForNuget.Views.Setup
 {

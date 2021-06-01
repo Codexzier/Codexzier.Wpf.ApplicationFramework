@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
 using Codexzier.Wpf.ApplicationFramework.Views.Base;
-using WpfAppTemplateForNuget.Views.Base;
 using WpfAppTemplateForNuget.Views.Data;
 
 namespace WpfAppTemplateForNuget.Views.Main

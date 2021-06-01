@@ -5,6 +5,9 @@ using System.Windows.Media.Imaging;
 
 namespace Codexzier.Wpf.ApplicationFramework.Components.WpfRender
 {
+    /// <summary>
+    /// Ist nicht benutzbar und braucht noch ein paar Verbesserungen.
+    /// </summary>
     public class WpfControlToBitmap
     {
         public static bool SaveControlImage(FrameworkElement control, string filename, bool setByActual = true)

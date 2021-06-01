@@ -9,10 +9,7 @@ using Codexzier.Wpf.ApplicationFramework.Views.Base;
 
 namespace Codexzier.Wpf.ApplicationFramework.Controls.FolderBrowser
 {
-    /// <summary>
-    /// Interaction logic for FolderBrowserControl.xaml
-    /// </summary>
-    public partial class FolderBrowserControl : UserControl
+    public partial class FolderBrowserControl 
     {
         public static readonly DependencyProperty SelectedDirectoryProperty = DependencyProperty.Register(
             "SelectedDirectory", typeof(SelectedDirectory), typeof(FolderBrowserControl), new PropertyMetadata(default(SelectedDirectory)));

@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Input;
 
-namespace WpfAppTemplateForNuget.Views.Base
+namespace Codexzier.Wpf.ApplicationFramework.Views.Base
 {
     public abstract class BaseCommand : ICommand
     {

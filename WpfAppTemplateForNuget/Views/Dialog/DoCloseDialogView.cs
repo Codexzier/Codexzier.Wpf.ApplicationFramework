@@ -1,5 +1,5 @@
 ﻿using Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus;
-using WpfAppTemplateForNuget.Views.Base;
+using Codexzier.Wpf.ApplicationFramework.Views.Base;
 using WpfAppTemplateForNuget.Views.DialogContent;
 
 namespace WpfAppTemplateForNuget.Views.Dialog

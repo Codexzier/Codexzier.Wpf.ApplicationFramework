@@ -1,18 +1,15 @@
 using System;
 using System.Windows.Input;
 using Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus;
+using Codexzier.Wpf.ApplicationFramework.Views.Base;
 
 namespace Codexzier.Wpf.ApplicationFramework.Views.MessageBox
 {
-    internal class ButtonCommandOk : ICommand
+    internal class ButtonCommandOk : BaseCommand
     {
-        public bool CanExecute(object parameter) => true;
-
-        public void Execute(object parameter)
+        public override void Execute(object parameter)
         {
             EventBusManager.CloseView<MessageBoxView>(10);
         }
-
-        public event EventHandler CanExecuteChanged;
     }
 }

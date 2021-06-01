@@ -3,9 +3,6 @@ using Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus;
 
 namespace Codexzier.Wpf.ApplicationFramework.Views.MessageBox
 {
-    /// <summary>
-    /// Interaction logic for MessageBoxView.xaml
-    /// </summary>
     public partial class MessageBoxView
     {
         private readonly MessageBoxViewModel _viewModel;

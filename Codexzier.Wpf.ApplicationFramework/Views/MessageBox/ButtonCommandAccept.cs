@@ -1,10 +1,9 @@
-using System;
-using System.Windows.Input;
 using Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus;
+using Codexzier.Wpf.ApplicationFramework.Views.Base;
 
 namespace Codexzier.Wpf.ApplicationFramework.Views.MessageBox
 {
-    internal class ButtonCommandAccept : ICommand
+    internal class ButtonCommandAccept : BaseCommand
     {
         private readonly AskBoxMessage _askBoxMessage;
 
@@ -13,14 +12,10 @@ namespace Codexzier.Wpf.ApplicationFramework.Views.MessageBox
             this._askBoxMessage = askBoxMessage;
         }
 
-        public bool CanExecute(object parameter) => true;
-
-        public void Execute(object parameter)
+        public override void Execute(object parameter)
         {
             this._askBoxMessage.Execute(true);
             EventBusManager.CloseView<MessageBoxView>(10);
         }
-
-        public event EventHandler CanExecuteChanged;
     }
 }

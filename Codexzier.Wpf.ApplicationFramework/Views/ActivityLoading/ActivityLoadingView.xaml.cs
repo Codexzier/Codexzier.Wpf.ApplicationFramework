@@ -4,10 +4,7 @@ using Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus;
 
 namespace Codexzier.Wpf.ApplicationFramework.Views.ActivityLoading
 {
-    /// <summary>
-    /// Interaction logic for ActivityLoadingView.xaml
-    /// </summary>
-    public partial class ActivityLoadingView : UserControl
+    public partial class ActivityLoadingView
     {
         private readonly ActivityLoadingViewModel _viewModel;
         public ActivityLoadingView()

@@ -2,7 +2,6 @@
 using Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus;
 using Codexzier.Wpf.ApplicationFramework.Views.Base;
 using WpfAppTemplateForNuget.Components.LegacyData;
-using WpfAppTemplateForNuget.Views.Base;
 
 namespace WpfAppTemplateForNuget.Views.Dialog
 {

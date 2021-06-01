@@ -9,7 +9,7 @@ namespace Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus
 {
     public class SideHostControl : Control
     {
-        public static IList<SideHostTypeChannel> TypeViews = new List<SideHostTypeChannel>();
+        private static readonly IList<SideHostTypeChannel> TypeViews = new List<SideHostTypeChannel>();
 
         public static bool IsViewOpen(Type view, int channel) => TypeViews.Any(a => a.Channel == channel && a.TypeView == view);
 
@@ -46,11 +46,10 @@ namespace Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus
                 var t = this._presenter.Content.GetType();
                 EventBusManager.Deregister(t);
 
-                //disposable.Dispose();
                 this.RemoveViewFromChannel(disposable, channel);
             }
 
-            SideHostControl.TypeViews.Add(new SideHostTypeChannel(channel, obj.GetType()));
+            TypeViews.Add(new SideHostTypeChannel(channel, obj.GetType()));
 
             this._presenter.Content = (Control)obj;
         }
@@ -84,7 +83,7 @@ namespace Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus
 
         private bool RemoveViewFromChannel(object obj, int channel)
         {
-            var d = SideHostControl.TypeViews.FirstOrDefault(a =>
+            var d = TypeViews.FirstOrDefault(a =>
             {
                 if (a.Channel != channel)
                 {
@@ -109,7 +108,7 @@ namespace Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus
 
             if (d != null)
             {
-                SideHostControl.TypeViews.Remove(d);
+                TypeViews.Remove(d);
                 return true;
             }
 

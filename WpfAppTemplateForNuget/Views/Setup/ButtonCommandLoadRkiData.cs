@@ -1,6 +1,5 @@
 ﻿using Codexzier.Wpf.ApplicationFramework.Views.Base;
 using WpfAppTemplateForNuget.Components.RkiCoronaLandkreise;
-using WpfAppTemplateForNuget.Views.Base;
 
 namespace WpfAppTemplateForNuget.Views.Setup
 {

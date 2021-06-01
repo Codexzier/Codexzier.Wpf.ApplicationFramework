@@ -2,7 +2,6 @@
 using System.Windows;
 using Codexzier.Wpf.ApplicationFramework.Components.WpfRender;
 using Codexzier.Wpf.ApplicationFramework.Views.Base;
-using WpfAppTemplateForNuget.Views.Base;
 using WpfAppTemplateForNuget.Views.RenderPicture;
 
 namespace WpfAppTemplateForNuget.Views.County
