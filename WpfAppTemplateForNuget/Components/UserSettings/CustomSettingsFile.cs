@@ -1,6 +1,4 @@
-﻿
-
-using Codexzier.Wpf.ApplicationFramework.Components.UserSettings;
+﻿using Codexzier.Wpf.ApplicationFramework.Components.UserSettings;
 
 namespace WpfAppTemplateForNuget.Components.UserSettings
 {
@@ -11,31 +9,37 @@ namespace WpfAppTemplateForNuget.Components.UserSettings
         private bool _loadFromService;
         private bool _loadRkiDataByApplicationStart;
 
-        public CustomSettingsFile():base()
+        public CustomSettingsFile(bool hasChanged) : base(hasChanged)
         {
         }
 
+        // ReSharper disable once UnusedMember.Global
         public string LastImportDirectory
         {
-            get => this._lastImportDirectory; set
+            get => this._lastImportDirectory;
+            set
             {
                 this._lastImportDirectory = value;
                 this.SetChanged();
             }
         }
 
+        // ReSharper disable once UnusedMember.Global
         public string LastImportFilename
         {
-            get => this._lastImportFilename; set
+            get => this._lastImportFilename;
+            set
             {
                 this._lastImportFilename = value;
                 this.SetChanged();
             }
         }
 
+        // ReSharper disable once UnusedMember.Global
         public bool LoadFromService
         {
-            get => this._loadFromService; set
+            get => this._loadFromService;
+            set
             {
                 this._loadFromService = value;
                 this.SetChanged();

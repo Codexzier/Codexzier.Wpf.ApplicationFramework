@@ -9,24 +9,25 @@ namespace WpfAppTemplateForNuget.Views.Main
 {
     public class MainViewModel : BaseViewModel
     {
+        private DateTime _actualDataFromDate;
+        private ICommand _commandSelectedDistrict;
+        private ICommand _commandSortByDeaths;
+        private ICommand _commandSortByWeekIncidence;
+        private int _countyCount;
+
+        private ObservableCollection<DistrictItem> _districts;
+        private string _searchCounty;
+        private DistrictItem _selected;
+
         public MainViewModel()
         {
             var list = new List<DistrictItem>
             {
-                new DistrictItem { Name = "Keine Daten...", Deaths = 0, WeekIncidence = 0 },
+                new DistrictItem {Name = "Keine Daten...", Deaths = 0, WeekIncidence = 0}
             };
 
             this.Districts = new ObservableCollection<DistrictItem>(list);
         }
-
-        private ObservableCollection<DistrictItem> _districts;
-        private DistrictItem _selected;
-        private string _searchCounty;
-        private ICommand _commandSelectedDistrict;
-        private DateTime _actualDataFromDate;
-        private ICommand _commandSortByWeekIncidence;
-        private ICommand _commandSortByDeaths;
-        private int _countyCount;
 
         public ObservableCollection<DistrictItem> Districts
         {
@@ -44,9 +45,7 @@ namespace WpfAppTemplateForNuget.Views.Main
             set
             {
                 if (this._selected == null || !this._selected.Equals(value))
-                {
                     this.CommandSelectedDistrict?.Execute(value);
-                }
                 this._selected = value;
                 this.OnNotifyPropertyChanged(nameof(this.Selected));
             }
@@ -111,7 +110,5 @@ namespace WpfAppTemplateForNuget.Views.Main
                 this.OnNotifyPropertyChanged(nameof(this.CommandSortByDeaths));
             }
         }
-
-
     }
 }

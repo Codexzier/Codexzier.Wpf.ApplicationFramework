@@ -10,20 +10,17 @@ namespace WpfAppTemplateForNuget.Converters
         {
             if (value is string str)
             {
-                if (string.IsNullOrEmpty(str))
-                {
-                    return value;
-                }
+                if (string.IsNullOrEmpty(str)) return value;
 
-                if (!str.StartsWith("http://"))
-                {
-                    return $"http://{str}";
-                }
+                if (!str.StartsWith("http://")) return $"http://{str}";
             }
 
             return value;
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) => throw new NotImplementedException();
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

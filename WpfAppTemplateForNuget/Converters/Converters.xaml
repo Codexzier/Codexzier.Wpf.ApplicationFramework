@@ -5,7 +5,7 @@
     <local:BooleanToOnlineStateBrushConverter x:Key="BooleanToOnlineStateBrushConverter" />
     <local:BoolenToBrushConverter x:Key="BoolenToBrushConverter" />
 
-    <local:RegexResultToBrushConverter  x:Key="RegexResultToBrushConverter" />
+    <local:RegexResultToBrushConverter x:Key="RegexResultToBrushConverter" />
     <local:NullToBrushConverter x:Key="NullToBrushConverter" />
     <local:VisibilityConverter x:Key="VisibilityConverter" />
 

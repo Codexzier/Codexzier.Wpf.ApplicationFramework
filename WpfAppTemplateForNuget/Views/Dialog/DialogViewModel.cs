@@ -6,22 +6,15 @@ namespace WpfAppTemplateForNuget.Views.Dialog
 {
     internal class DialogViewModel : BaseViewModel
     {
-        private string _header;
         private ICommand _commandCloseDialogView = new DoCloseDialogView();
         private ICommand _commandSelectedPathDialogAccept;
+        private string _header;
         private SelectedDirectory _selectedDirectoryPath = new SelectedDirectory();
-
-        public DialogViewModel()
-        {
-            //this._selectedDirectoryPath.FolderNameHasChangedEvent += (string folderName) =>
-            //{
-            //    this._selectedDirectoryPath.FolderName = folderName;
-            //};
-        }
 
         public string Header
         {
-            get => this._header; set
+            get => this._header;
+            set
             {
                 this._header = value;
                 this.OnNotifyPropertyChanged(nameof(this.Header));
@@ -30,7 +23,8 @@ namespace WpfAppTemplateForNuget.Views.Dialog
 
         public ICommand CommandCloseDialogView
         {
-            get => this._commandCloseDialogView; set
+            get => this._commandCloseDialogView;
+            set
             {
                 this._commandCloseDialogView = value;
                 this.OnNotifyPropertyChanged(nameof(this.CommandCloseDialogView));

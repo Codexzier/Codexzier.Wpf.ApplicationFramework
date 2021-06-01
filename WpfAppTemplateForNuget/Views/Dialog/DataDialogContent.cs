@@ -1,5 +1,4 @@
-﻿
-namespace WpfAppTemplateForNuget.Views.Dialog
+﻿namespace WpfAppTemplateForNuget.Views.Dialog
 {
     internal class DataDialogContent
     {

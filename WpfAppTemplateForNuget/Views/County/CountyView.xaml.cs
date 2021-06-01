@@ -14,25 +14,25 @@ using WpfAppTemplateForNuget.Views.RenderPicture;
 namespace WpfAppTemplateForNuget.Views.County
 {
     /// <summary>
-    /// Interaction logic for CountyView.xaml
+    ///     Interaction logic for CountyView.xaml
     /// </summary>
     public partial class CountyView : UserControl
     {
-        private readonly CountyViewModel _viewModel;
-
         private readonly IList<(TextBlock, Storyboard)> _fadeIn = new List<(TextBlock, Storyboard)>();
         private readonly IList<(TextBlock, Storyboard)> _fadeOut = new List<(TextBlock, Storyboard)>();
+        private readonly CountyViewModel _viewModel;
 
         public CountyView()
         {
             this.InitializeComponent();
 
-            this._viewModel = (CountyViewModel)this.DataContext;
+            this._viewModel = (CountyViewModel) this.DataContext;
 
             EventBusManager.Register<CountyView, BaseMessage>(this.CountyMessageEvent);
             this.InitializeAnimation();
 
-            this._viewModel.CommandCreatePicture = new ButtonCommandCreatePicture(this._viewModel, this.RenderPicturePrint);
+            this._viewModel.CommandCreatePicture =
+                new ButtonCommandCreatePicture(this._viewModel, this.RenderPicturePrint);
         }
 
         private void InitializeAnimation()
@@ -46,10 +46,8 @@ namespace WpfAppTemplateForNuget.Views.County
             this._fadeOut.Add((this.tbDescription_WeekIncidence, new Storyboard()));
             this._fadeOut.Add((this.tbValue_WeekIncidence, new Storyboard()));
 
-            for (int index = 0; index < this._fadeOut.Count; index++)
-            {
+            for (var index = 0; index < this._fadeOut.Count; index++)
                 Animations.SetFade(this._fadeOut[index].Item1, this._fadeOut[index].Item2, 1d, 0d, 0, 0);
-            }
 
             this._fadeIn.Add((this.tbDescription_Name, new Storyboard()));
             this._fadeIn.Add((this.tbValue_Name, new Storyboard()));
@@ -60,25 +58,18 @@ namespace WpfAppTemplateForNuget.Views.County
             this._fadeIn.Add((this.tbDescription_WeekIncidence, new Storyboard()));
             this._fadeIn.Add((this.tbValue_WeekIncidence, new Storyboard()));
 
-            for (int index = 0; index < this._fadeIn.Count; index++)
-            {
-                Animations.SetFade(this._fadeIn[index].Item1, this._fadeIn[index].Item2, 0d, 1d, (index * 100) + 10, 1000);
-            }
+            for (var index = 0; index < this._fadeIn.Count; index++)
+                Animations.SetFade(this._fadeIn[index].Item1, this._fadeIn[index].Item2, 0d, 1d, index * 100 + 10,
+                    1000);
         }
 
         private async void CountyMessageEvent(IMessageContainer obj)
         {
-            foreach (var item in this._fadeOut)
-            {
-                item.Item2.Begin();
-            }
+            foreach (var item in this._fadeOut) item.Item2.Begin();
 
             if (obj.Content is DistrictItem districtItem)
             {
-                foreach (var item in this._fadeIn)
-                {
-                    item.Item2.Begin();
-                }
+                foreach (var item in this._fadeIn) item.Item2.Begin();
 
                 this._viewModel.DistrictData = districtItem;
 
@@ -108,19 +99,17 @@ namespace WpfAppTemplateForNuget.Views.County
                     this._viewModel.CountyDeathResults = enumerable.Select(s =>
                     {
                         var toolTip = $"{s.Date:d} | {s.Deaths:N1} | {s.Deaths}";
-                        return new DiagramLevelItem { Value = s.Deaths, ToolTipText = toolTip };
+                        return new DiagramLevelItem {Value = s.Deaths, ToolTipText = toolTip};
                     }).ToList();
 
                     this.Dispatcher.Invoke(delegate
-                   {
-                       this.RenderPicturePrint.DataContext = new RenderPicturePrintViewModel
-                       {
-                           CountyResults = this._viewModel.CountyResults,
-                           DistrictData = this._viewModel.DistrictData
-                       };
-                   });
-
-
+                    {
+                        this.RenderPicturePrint.DataContext = new RenderPicturePrintViewModel
+                        {
+                            CountyResults = this._viewModel.CountyResults,
+                            DistrictData = this._viewModel.DistrictData
+                        };
+                    });
                 });
             }
         }

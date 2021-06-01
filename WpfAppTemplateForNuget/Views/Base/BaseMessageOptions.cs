@@ -1,5 +1,4 @@
-﻿
-namespace WpfAppTemplateForNuget.Views.Base
+﻿namespace WpfAppTemplateForNuget.Views.Base
 {
     public enum BaseMessageOptions
     {

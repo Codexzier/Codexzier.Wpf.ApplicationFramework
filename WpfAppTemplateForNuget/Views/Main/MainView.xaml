@@ -1,10 +1,10 @@
 ﻿<UserControl x:Class="WpfAppTemplateForNuget.Views.Main.MainView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:WpfAppTemplateForNuget.Views.Main"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="250" d:DesignWidth="300">
     <UserControl.DataContext>
         <local:MainViewModel />
@@ -32,16 +32,16 @@
                 <Button Content="Sort by deaths count" Command="{Binding CommandSortByDeaths}" />
             </StackPanel>
 
-            <TextBox Grid.Row="1" 
+            <TextBox Grid.Row="1"
                      Margin="1 1 17 1"
                      Text="{Binding SearchCounty, UpdateSourceTrigger=PropertyChanged}"
-                     KeyUp="TextBoxSearch_KeyUp"/>
+                     KeyUp="TextBoxSearch_KeyUp" />
 
-            <DataGrid Grid.Row="2" 
+            <DataGrid Grid.Row="2"
                       Grid.RowSpan="2"
                       RenderOptions.CachingHint="Cache"
-                      ItemsSource="{Binding Districts}" 
-                      SelectedItem="{Binding Selected, UpdateSourceTrigger=PropertyChanged}" 
+                      ItemsSource="{Binding Districts}"
+                      SelectedItem="{Binding Selected, UpdateSourceTrigger=PropertyChanged}"
                       Margin="0,1,0,26">
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn Header="" Binding="{Binding Selected}" Visibility="Collapsed" />
@@ -51,14 +51,14 @@
                 </DataGrid.Columns>
             </DataGrid>
             <Border Grid.Row="3"
-                    BorderBrush="{StaticResource BrushMonochromaticBlueGrayE}" 
+                    BorderBrush="{StaticResource BrushMonochromaticBlueGrayE}"
                     BorderThickness="0 1 0 0">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="{Binding ActualDataFromDate, StringFormat=d}" />
                     <TextBlock Text="{Binding CountyCount}" />
                 </StackPanel>
             </Border>
-            
+
         </Grid>
     </Border>
 

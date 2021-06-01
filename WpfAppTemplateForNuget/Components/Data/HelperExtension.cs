@@ -15,23 +15,23 @@ namespace WpfAppTemplateForNuget.Components.Data
         public static string CreateFilename()
         {
             var folder = SubFolderRkiData();
-            if (!Directory.Exists(folder))
-            {
-                Directory.CreateDirectory(folder);
-            }
+            if (!Directory.Exists(folder)) Directory.CreateDirectory(folder);
 
             var date = DateTime.Today;
 
             return $"{folder}/{RkiFilename}-{date:d}.json";
         }
 
-        public static string SubFolderRkiData() => $"{Environment.CurrentDirectory}/{DataFolderName}";
+        public static string SubFolderRkiData()
+        {
+            return $"{Environment.CurrentDirectory}/{DataFolderName}";
+        }
 
         public static string GetDate(this string filename)
         {
             var strArray = filename.Split("\\").Last();
 
-            var date = strArray.Substring(RkiFilename.Length + 1);
+            var date = strArray[(RkiFilename.Length + 1)..];
             date = date.Remove(date.Length - 5);
 
             return date;
@@ -48,10 +48,7 @@ namespace WpfAppTemplateForNuget.Components.Data
                     .Districts
                     .FirstOrDefault(w => w.Name.Equals(name));
 
-                if (v == null)
-                {
-                    continue;
-                }
+                if (v == null) continue;
 
                 v.Date = result.Date;
                 list.Add(v);
@@ -60,14 +57,17 @@ namespace WpfAppTemplateForNuget.Components.Data
             return list.OrderBy(o => o.Date).ToList();
         }
 
-        internal static string RemoveTimeFromLastUpdateString(this string lastUpdate) => lastUpdate.Split(',')[0];
+        internal static string RemoveTimeFromLastUpdateString(this string lastUpdate)
+        {
+            return lastUpdate.Split(',')[0];
+        }
 
         internal static IEnumerable<string> GetFiles()
         {
             return Directory
                 .GetFiles(SubFolderRkiData())
                 .Where(w => w.EndsWith(".json") &&
-                            w.Contains(HelperExtension.RkiFilename));
+                            w.Contains(RkiFilename));
         }
     }
 }

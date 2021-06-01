@@ -26,8 +26,8 @@
                 <Setter Property="Margin" Value="5 2" />
             </Style>
 
-            
+
         </ResourceDictionary>
-        
+
     </Application.Resources>
 </Application>

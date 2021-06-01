@@ -1,5 +1,4 @@
-﻿
-namespace WpfAppTemplateForNuget.Components.LegacyData
+﻿namespace WpfAppTemplateForNuget.Components.LegacyData
 {
     public class LegacyDistrictItem
     {

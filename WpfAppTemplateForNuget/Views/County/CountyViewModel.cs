@@ -8,6 +8,10 @@ namespace WpfAppTemplateForNuget.Views.County
 {
     public class CountyViewModel : BaseViewModel
     {
+        private ICommand _commandCreatePicture;
+        private List<DiagramLevelItem> _countyDeathResults;
+
+        private List<DiagramLevelItem> _countyResults;
         private DistrictItem _districtData;
 
         public DistrictItem DistrictData
@@ -19,9 +23,6 @@ namespace WpfAppTemplateForNuget.Views.County
                 this.OnNotifyPropertyChanged(nameof(this.DistrictData));
             }
         }
-
-        private List<DiagramLevelItem> _countyResults;
-        private List<DiagramLevelItem> _countyDeathResults;
 
         public List<DiagramLevelItem> CountyResults
         {
@@ -43,8 +44,6 @@ namespace WpfAppTemplateForNuget.Views.County
             }
         }
 
-
-        private ICommand _commandCreatePicture;
         public ICommand CommandCreatePicture
         {
             get => this._commandCreatePicture;

@@ -5,10 +5,10 @@ namespace WpfAppTemplateForNuget.Views.Setup
 {
     internal class SetupViewModel : BaseViewModel
     {
-        private bool _loadRkiDataByApplicationStart;
-        private ICommand _commandLoadRkiDataByApplicationStart;
         private ICommand _commandImportDataFromLegacyApplication;
         private ICommand _commandLoadRkiData;
+        private ICommand _commandLoadRkiDataByApplicationStart;
+        private bool _loadRkiDataByApplicationStart;
 
         public bool LoadRkiDataByApplicationStart
         {

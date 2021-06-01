@@ -9,13 +9,14 @@ namespace WpfAppTemplateForNuget.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is bool b)
-            {
-                return b ? Brushes.Green : Brushes.DarkGray;
-            }
+            if (value is bool b) return b ? Brushes.Green : Brushes.DarkGray;
 
             return Brushes.Gray;
         }
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) => throw new NotImplementedException();
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

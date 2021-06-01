@@ -10,15 +10,15 @@ namespace WpfAppTemplateForNuget.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is string str)
-            {
                 if (!string.IsNullOrEmpty(str))
-                {
                     return new SolidColorBrush(Colors.Black);
-                }
-            }
 
             return new SolidColorBrush(Colors.Red);
         }
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) => throw new NotImplementedException();
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

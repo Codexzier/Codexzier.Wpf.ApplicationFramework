@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Newtonsoft.Json;
 using WpfAppTemplateForNuget.Components.Data;
 using WpfAppTemplateForNuget.Components.RkiCoronaLandkreise;
 
@@ -23,10 +23,7 @@ namespace WpfAppTemplateForNuget.Components.LegacyData
 
                 var newFilename = $"{HelperExtension.SubFolderRkiData()}/{HelperExtension.RkiFilename}-{date}.json";
 
-                if (File.Exists(newFilename))
-                {
-                    continue;
-                }
+                if (File.Exists(newFilename)) continue;
 
                 var landkreise = new Landkreise();
                 var d = DateTime.Parse(date);

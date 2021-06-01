@@ -1,10 +1,9 @@
-﻿using System.Windows.Controls;
-using Codexzier.Wpf.ApplicationFramework.Commands;
+﻿using Codexzier.Wpf.ApplicationFramework.Commands;
 using Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus;
 
 namespace WpfAppTemplateForNuget.Views.Menu
 {
-    public partial class MenuView : UserControl
+    public partial class MenuView
     {
         private readonly MenuViewModel _viewModel;
 
@@ -12,13 +11,12 @@ namespace WpfAppTemplateForNuget.Views.Menu
         {
             this.InitializeComponent();
 
-            this._viewModel = (MenuViewModel)this.DataContext;
+            this._viewModel = (MenuViewModel) this.DataContext;
 
-            this._viewModel.CommandOpenMain = new ButtonCommandOpenMain(this._viewModel);
-            this._viewModel.CommandOpenSetup = new ButtonCommandOpenSetup(this._viewModel);
+            this._viewModel.CommandOpenMain = new ButtonCommandOpenMain();
+            this._viewModel.CommandOpenSetup = new ButtonCommandOpenSetup();
 
             EventBusManager.Register<MenuView, BaseMessage>(this.BaseMessageEvent);
-            //this._viewModel.ViewOpened = EventBusManager.GetViewOpened(0);
         }
 
         private void BaseMessageEvent(IMessageContainer arg)

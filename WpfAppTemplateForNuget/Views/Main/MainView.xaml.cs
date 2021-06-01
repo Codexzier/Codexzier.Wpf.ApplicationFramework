@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Controls;
+using System.Windows.Input;
 using Codexzier.Wpf.ApplicationFramework.Commands;
 using Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus;
 using Codexzier.Wpf.ApplicationFramework.Views.Base;
@@ -12,7 +11,7 @@ using WpfAppTemplateForNuget.Views.Data;
 
 namespace WpfAppTemplateForNuget.Views.Main
 {
-    public partial class MainView : UserControl
+    public partial class MainView
     {
         private readonly MainViewModel _viewModel;
 
@@ -20,10 +19,10 @@ namespace WpfAppTemplateForNuget.Views.Main
         {
             this.InitializeComponent();
 
-            this._viewModel = (MainViewModel)this.DataContext;
+            this._viewModel = (MainViewModel) this.DataContext;
 
             EventBusManager.Register<MainView, BaseMessage>(this.BaseMessageEvent);
-            this._viewModel.CommandSelectedDistrict = new ChangedCommandSelectedDistrict(this._viewModel);
+            this._viewModel.CommandSelectedDistrict = new ChangedCommandSelectedDistrict();
             this._viewModel.CommandSortByWeekIncidence = new ButtonCommandSortByWeekIncidence(this._viewModel);
             this._viewModel.CommandSortByDeaths = new ButtonCommandSortByDeaths(this._viewModel);
         }
@@ -38,12 +37,11 @@ namespace WpfAppTemplateForNuget.Views.Main
                 {
                     var component = RkiCoronaLandkreiseComponent.GetInstance();
                     component.RkiDataErrorEvent += this.Component_RkiDataErrorEvent;
-                    var landkreise = component.LoadData(out Action<bool> safeData);
+                    var landkreise = component.LoadData(out var safeData);
 
                     if (safeData != null)
-                    {
-                        SimpleStatusOverlays.ShowAsk("Question", "Overwrite local data with actual loaded data?", safeData);
-                    }
+                        SimpleStatusOverlays.ShowAsk("Question", "Overwrite local data with actual loaded data?",
+                            safeData);
 
                     if (landkreise == null)
                     {
@@ -66,28 +64,26 @@ namespace WpfAppTemplateForNuget.Views.Main
 
                 this._viewModel.ActualDataFromDate = StaticDataManager.ActualLoadedDataDate;
 
-                this.Dispatcher.Invoke(() =>
-                {
-                    this._viewModel.Districts.Clear();
-                });
+                this.Dispatcher.Invoke(() => { this._viewModel.Districts.Clear(); });
 
                 this._viewModel.CountyCount = 0;
                 foreach (var item in StaticDataManager.ActualLoadedData)
-                {
                     this.Dispatcher.Invoke(() =>
                     {
                         this._viewModel.Districts.Add(item);
                         this._viewModel.CountyCount++;
                     });
-                }
 
                 SimpleStatusOverlays.ActivityOff();
             });
         }
 
-        private void Component_RkiDataErrorEvent(string message) => SimpleStatusOverlays.Show("ERROR", message);
+        private void Component_RkiDataErrorEvent(string message)
+        {
+            SimpleStatusOverlays.Show("ERROR", message);
+        }
 
-        private void TextBoxSearch_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        private void TextBoxSearch_KeyUp(object sender, KeyEventArgs e)
         {
             if (string.IsNullOrEmpty(this._viewModel.SearchCounty))
             {

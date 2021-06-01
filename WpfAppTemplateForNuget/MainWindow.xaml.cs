@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
 using System.Windows;
@@ -12,23 +13,22 @@ using WpfAppTemplateForNuget.Components.LegacyData;
 using WpfAppTemplateForNuget.Components.UserSettings;
 using WpfAppTemplateForNuget.Views.Base;
 using WpfAppTemplateForNuget.Views.Main;
+using Point = System.Drawing.Point;
+using Size = System.Drawing.Size;
 
 namespace WpfAppTemplateForNuget
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public MainWindow()
         {
             this.InitializeComponent();
 
 
-
             this.Prepare();
 
-            var setting = UserSettingsLoader<CustomSettingsFile>.GetInstance(SerializeHelper.Serialize, SerializeHelper.Deserialize).Load();
+            var setting = UserSettingsLoader<CustomSettingsFile>
+                .GetInstance(SerializeHelper.Serialize, SerializeHelper.Deserialize).Load();
 
             this.LoadApplicationSize(setting);
             this.LoadApplicationWindowState(setting);
@@ -39,7 +39,7 @@ namespace WpfAppTemplateForNuget
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo("de-DE");
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("de-DE");
-            FrameworkElement.LanguageProperty.OverrideMetadata(typeof(FrameworkElement), new FrameworkPropertyMetadata(
+            LanguageProperty.OverrideMetadata(typeof(FrameworkElement), new FrameworkPropertyMetadata(
                 XmlLanguage.GetLanguage(CultureInfo.CurrentCulture.IetfLanguageTag)));
 
             new ShiftDataToSubFolder().MoveRkiDataFilesFromCurrentApplicationFolderToSubFolder();
@@ -55,28 +55,22 @@ namespace WpfAppTemplateForNuget
         }
 
         /// <summary>
-        /// Load the last size of the application
+        ///     Load the last size of the application
         /// </summary>
         private void LoadApplicationSize(CustomSettingsFile setting)
         {
-            var size = new System.Drawing.Size(setting.SizeX, setting.SizeY);
+            var size = new Size(setting.SizeX, setting.SizeY);
 
-            if (size.Width < 100)
-            {
-                size.Width = 800;
-            }
+            if (size.Width < 100) size.Width = 800;
 
-            if (size.Height < 600)
-            {
-                size.Height = 600;
-            }
+            if (size.Height < 600) size.Height = 600;
 
             this.Width = size.Width;
             this.Height = size.Height;
         }
 
         /// <summary>
-        /// Load the window state
+        ///     Load the window state
         /// </summary>
         private void LoadApplicationWindowState(CustomSettingsFile setting)
         {
@@ -88,15 +82,17 @@ namespace WpfAppTemplateForNuget
 
             this.WindowState = Enum
                 .TryParse(setting.ApplicationWindowState,
-                    out WindowState windowState) ? windowState : WindowState.Normal;
+                    out WindowState windowState)
+                ? windowState
+                : WindowState.Normal;
         }
 
         /// <summary>
-        /// Load the location and place the application to the position.
+        ///     Load the location and place the application to the position.
         /// </summary>
         private void LoadApplicationStartLocation(CustomSettingsFile setting)
         {
-            var point = new System.Drawing.Point(setting.ApplicationPositionX, setting.ApplicationPositionY);
+            var point = new Point(setting.ApplicationPositionX, setting.ApplicationPositionY);
 
             if (point.X < 0 && point.Y < 0)
             {
@@ -108,21 +104,22 @@ namespace WpfAppTemplateForNuget
             this.Top = point.Y;
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void Window_Closing(object sender, CancelEventArgs e)
         {
-            var usl = UserSettingsLoader<CustomSettingsFile>.GetInstance(SerializeHelper.Serialize, SerializeHelper.Deserialize);
+            var usl = UserSettingsLoader<CustomSettingsFile>.GetInstance(SerializeHelper.Serialize,
+                SerializeHelper.Deserialize);
             var file = usl.Load();
 
-            file.ApplicationPositionX = (int)this.Left;
-            file.ApplicationPositionY = (int)this.Top;
-            file.SizeX = (int)this.Width;
-            file.SizeY = (int)this.Height;
+            file.ApplicationPositionX = (int) this.Left;
+            file.ApplicationPositionY = (int) this.Top;
+            file.SizeX = (int) this.Width;
+            file.SizeY = (int) this.Height;
             file.ApplicationWindowState = this.WindowState.ToString();
 
             usl.Save(file);
         }
 
-        private void Grid_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
         }
@@ -134,17 +131,9 @@ namespace WpfAppTemplateForNuget
 
         private void UIElement_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.ClickCount >= 2)
-            {
-                if (this.WindowState == WindowState.Normal)
-                {
-                    this.WindowState = WindowState.Maximized;
-                }
-                else
-                {
-                    this.WindowState = WindowState.Normal;
-                }
-            }
+            if (e.ClickCount < 2) return;
+
+            this.WindowState = this.WindowState == WindowState.Normal ? WindowState.Maximized : WindowState.Normal;
         }
     }
 }

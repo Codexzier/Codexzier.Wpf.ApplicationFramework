@@ -1,5 +1,4 @@
-﻿
-namespace WpfAppTemplateForNuget.Components.RkiCoronaLandkreise
+﻿namespace WpfAppTemplateForNuget.Components.RkiCoronaLandkreise
 {
     public class RkiCoronaLandkreiseResult
     {

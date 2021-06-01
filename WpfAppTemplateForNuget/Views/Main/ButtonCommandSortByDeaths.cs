@@ -1,22 +1,21 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Windows.Input;
 using Codexzier.Wpf.ApplicationFramework.Views.Base;
+using WpfAppTemplateForNuget.Views.Base;
 using WpfAppTemplateForNuget.Views.Data;
 
 namespace WpfAppTemplateForNuget.Views.Main
 {
-    internal class ButtonCommandSortByDeaths : ICommand
+    internal class ButtonCommandSortByDeaths : BaseCommand
     {
-        private MainViewModel _viewModel;
+        private readonly MainViewModel _viewModel;
 
-        public ButtonCommandSortByDeaths(MainViewModel viewModel) => this._viewModel = viewModel;
+        public ButtonCommandSortByDeaths(MainViewModel viewModel)
+        {
+            this._viewModel = viewModel;
+        }
 
-        public event EventHandler CanExecuteChanged;
-
-        public bool CanExecute(object parameter) => true;
-        public void Execute(object parameter)
+        public override void Execute(object parameter)
         {
             if (StaticDataManager.ActualLoadedData == null || !StaticDataManager.ActualLoadedData.Any())
             {

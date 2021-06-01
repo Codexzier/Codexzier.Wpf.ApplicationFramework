@@ -1,10 +1,10 @@
 ﻿<UserControl x:Class="WpfAppTemplateForNuget.Views.Setup.SetupView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:WpfAppTemplateForNuget.Views.Setup"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="350" d:DesignWidth="800">
     <UserControl.DataContext>
         <local:SetupViewModel />
@@ -17,7 +17,7 @@
             </Style>
         </ResourceDictionary>
     </UserControl.Resources>
-    <Border  BorderBrush="{StaticResource BrushMonochromaticBlueGrayE}" BorderThickness="1">
+    <Border BorderBrush="{StaticResource BrushMonochromaticBlueGrayE}" BorderThickness="1">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" MaxWidth="400" />
@@ -36,27 +36,28 @@
             </Grid.RowDefinitions>
 
             <!-- Noch nicht fertig, um aus dem Dialog das Verzeichnis auszuwählen -->
-            <TextBlock Grid.Row="0" Grid.Column="0" 
-                   TextWrapping="Wrap" 
-                   Text="Importieren aus alt Anwendung (ExampleReadAndShowRkiData)" />
-            <Button Grid.Row="0" Grid.Column="1" 
-                HorizontalAlignment="Left"
-                Content="Choose Folder"
-                Command="{Binding CommandImportDataFromLegacyApplication}"/>
+            <TextBlock Grid.Row="0" Grid.Column="0"
+                       TextWrapping="Wrap"
+                       Text="Importieren aus alt Anwendung (ExampleReadAndShowRkiData)" />
+            <Button Grid.Row="0" Grid.Column="1"
+                    HorizontalAlignment="Left"
+                    Content="Choose Folder"
+                    Command="{Binding CommandImportDataFromLegacyApplication}" />
 
-            <TextBlock Grid.Row="1" Grid.Column="0" 
-                   TextWrapping="Wrap"
-                   Text="Beim Start der Anwendung, versuchen die aktuellen Daten zu laden." />
-            <CheckBox Grid.Row="1" Grid.Column="1" IsChecked="{Binding LoadRkiDataByApplicationStart}" Command="{Binding CommandLoadRkiDataByApplicationStart}" />
+            <TextBlock Grid.Row="1" Grid.Column="0"
+                       TextWrapping="Wrap"
+                       Text="Beim Start der Anwendung, versuchen die aktuellen Daten zu laden." />
+            <CheckBox Grid.Row="1" Grid.Column="1" IsChecked="{Binding LoadRkiDataByApplicationStart}"
+                      Command="{Binding CommandLoadRkiDataByApplicationStart}" />
 
             <TextBlock Grid.Row="2" Grid.Column="0"
-                   TextWrapping="Wrap"
-                   Text="Aktuelle Daten laden. (Überschreibt den Tag, wenn der gespeicherte Daten in der Vergangenheit liegen)" />
+                       TextWrapping="Wrap"
+                       Text="Aktuelle Daten laden. (Überschreibt den Tag, wenn der gespeicherte Daten in der Vergangenheit liegen)" />
 
             <Button Grid.Row="2" Grid.Column="1"
-                HorizontalAlignment="Left"
-                Content="Lade Daten" 
-                Command="{Binding CommandLoadRkiData}"/>
+                    HorizontalAlignment="Left"
+                    Content="Lade Daten"
+                    Command="{Binding CommandLoadRkiData}" />
         </Grid>
     </Border>
 </UserControl>

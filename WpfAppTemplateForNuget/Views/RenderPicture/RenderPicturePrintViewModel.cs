@@ -7,6 +7,7 @@ namespace WpfAppTemplateForNuget.Views.RenderPicture
 {
     internal class RenderPicturePrintViewModel : BaseViewModel
     {
+        private List<DiagramLevelItem> _countyResults;
         private DistrictItem _districtData;
 
         public DistrictItem DistrictData
@@ -18,8 +19,6 @@ namespace WpfAppTemplateForNuget.Views.RenderPicture
                 this.OnNotifyPropertyChanged(nameof(this.DistrictData));
             }
         }
-
-        private List<DiagramLevelItem> _countyResults;
 
         public List<DiagramLevelItem> CountyResults
         {

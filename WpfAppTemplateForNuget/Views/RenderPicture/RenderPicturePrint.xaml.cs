@@ -3,7 +3,7 @@
 namespace WpfAppTemplateForNuget.Views.RenderPicture
 {
     /// <summary>
-    /// Interaction logic for RenderPicturePrint.xaml
+    ///     Interaction logic for RenderPicturePrint.xaml
     /// </summary>
     public partial class RenderPicturePrint : UserControl
     {
@@ -13,7 +13,7 @@ namespace WpfAppTemplateForNuget.Views.RenderPicture
         {
             this.InitializeComponent();
 
-            this._viewModel = (RenderPicturePrintViewModel)this.DataContext;
+            this._viewModel = (RenderPicturePrintViewModel) this.DataContext;
         }
     }
 }
