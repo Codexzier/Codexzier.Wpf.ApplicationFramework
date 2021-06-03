@@ -9,7 +9,7 @@ namespace Codexzier.Wpf.ApplicationTemplate.Components.UserSettings
         private bool _loadFromService;
         private bool _loadRkiDataByApplicationStart;
 
-        public CustomSettingsFile(bool hasChanged) : base(hasChanged)
+        public CustomSettingsFile() : base(false)
         {
         }
 

@@ -1,3 +1,6 @@
+using Codexzier.Wpf.ApplicationFramework.Commands;
+using Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus;
+using System;
 using System.Windows.Controls;
 
 namespace Codexzier.Wpf.ApplicationTemplate.Views.Main
@@ -7,13 +10,15 @@ namespace Codexzier.Wpf.ApplicationTemplate.Views.Main
         private readonly MainViewModel _viewModel;
         public MainView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
 
             this._viewModel = (MainViewModel) this.DataContext;
+            EventBusManager.Register<MainView, BaseMessage>(this.BaseMessageEvent);
         }
-    }
 
-    internal class MainViewModel
-    {
+        private void BaseMessageEvent(IMessageContainer obj)
+        {
+            // do things
+        }
     }
 }

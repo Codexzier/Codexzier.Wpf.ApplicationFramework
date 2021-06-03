@@ -7,5 +7,6 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <!-- Your Content -->
+        <Label Content="put your content here" />
     </Grid>
 </UserControl>
