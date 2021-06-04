@@ -6,7 +6,7 @@ namespace Codexzier.Wpf.ApplicationTemplate.Views.Menu
         
         public MenuView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
 
             this._viewModel = (MenuViewModel) this.DataContext;
             
