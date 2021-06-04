@@ -19,6 +19,7 @@ Some components I have not yet added and are still being evaluated.</Description
     <PackageId>Codexzier.Wpf.ApplicationFramework</PackageId>
     <Product>Codexzier Wpf ApplicationFramework</Product>
     <PackageReleaseNotes>Add descriptions.</PackageReleaseNotes>
+    <PackageVersion>0.1.2</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>

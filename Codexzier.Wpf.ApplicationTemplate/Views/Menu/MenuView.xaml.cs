@@ -1,8 +1,6 @@
-using System.Windows.Controls;
-
 namespace Codexzier.Wpf.ApplicationTemplate.Views.Menu
 {
-    public partial class MenuView : UserControl
+    public partial class MenuView
     {
         private readonly MenuViewModel _viewModel;
         
@@ -12,6 +10,7 @@ namespace Codexzier.Wpf.ApplicationTemplate.Views.Menu
 
             this._viewModel = (MenuViewModel) this.DataContext;
             
+            this._viewModel.CommandOpenMain = new ButtonCommandOpenMain();
         }
     }
 }
