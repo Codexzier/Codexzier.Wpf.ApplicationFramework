@@ -7,6 +7,29 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <!-- Your Content -->
-        <Label Content="put your content here" />
+        
+        <StackPanel>
+            <Label Content="put your content here" />
+            <Button Content="Test Button" Height="30" />
+            <ComboBox SelectedIndex="0">
+                <ComboBoxItem Content="Test" />
+            </ComboBox>
+            <TextBox Text="Test text" />
+            <CheckBox Content="Test" />
+            <Label Content="Dies ist ein Test"  />
+
+            <ListBox Height="60">
+                <ListBoxItem Content="ListBoxItem 1" />
+                <ListBoxItem Content="ListBoxItem 2" />
+            </ListBox>
+            <StackPanel>
+                <RadioButton Content="choose 1" />
+                <RadioButton Content="choose 2" />
+            </StackPanel>
+            <TabControl Height="50">
+                <TabItem Header="Tab 1" />
+                <TabItem Header="Tab 2" />
+            </TabControl>
+        </StackPanel>
     </Grid>
 </UserControl>

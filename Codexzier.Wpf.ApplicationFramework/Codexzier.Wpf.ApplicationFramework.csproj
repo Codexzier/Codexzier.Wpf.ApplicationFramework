@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
-    <Version>0.1.1</Version>
+    <Version>0.1.3</Version>
     <Authors>Johannes Paul Langner</Authors>
     <Company>Codexzier</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

@@ -14,6 +14,8 @@
                 <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/TextBlocks.xaml" />
                 <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/ProgressBar.xaml" />
                 <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/ComboBox.xaml" />
+                <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/ListBox.xaml" />
+                <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/RadioButton.xaml" />
 
                 <ResourceDictionary Source="/Codexzier.Wpf.ApplicationTemplate;component/Converters/Converters.xaml" />
             </ResourceDictionary.MergedDictionaries>
