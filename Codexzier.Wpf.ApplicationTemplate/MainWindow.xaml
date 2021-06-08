@@ -52,7 +52,7 @@
                                   Grid.RowSpan="3"
                                   Grid.ColumnSpan="2" Grid.Column="0"
                                   HorizontalAlignment="Stretch"
-                                  Channel="10"
+                                  Channel="100"
                                   VerticalAlignment="Stretch" />
     </Grid>
 </Window>

@@ -16,19 +16,19 @@ namespace Codexzier.Wpf.ApplicationFramework.Views.Base
             });
         }
 
-        public static void ActivityOn()
+        public static void ActivityOn(int channel = 100)
         {
             Application.Current.Dispatcher.Invoke(delegate
             {
-                EventBusManager.OpenView<ActivityLoadingView>(10);
+                EventBusManager.OpenView<ActivityLoadingView>(channel);
             });
         }
 
-        public static void ActivityOff()
+        public static void ActivityOff(int channel = 100)
         {
             Application.Current.Dispatcher.Invoke(delegate
             {
-                EventBusManager.CloseView<ActivityLoadingView>(10);
+                EventBusManager.CloseView<ActivityLoadingView>(channel);
             });
         }
 
