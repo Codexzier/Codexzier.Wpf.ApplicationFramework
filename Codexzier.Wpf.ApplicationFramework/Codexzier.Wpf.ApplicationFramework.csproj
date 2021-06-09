@@ -7,8 +7,8 @@
     <Authors>Johannes Paul Langner</Authors>
     <Company>Codexzier</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>0.1.0.0</AssemblyVersion>
-    <FileVersion>0.1.0.0</FileVersion>
+    <AssemblyVersion>0.1.5.0</AssemblyVersion>
+    <FileVersion>0.1.5.0</FileVersion>
     <Description>Eine Zusammenführung meiner oft genutzten Programmsourcen für WPF Anwendungen.
 Einige Komponenten habe ich noch nicht hinzugefügt und werden noch evaluiert.
 
@@ -18,8 +18,12 @@ Some components I have not yet added and are still being evaluated.</Description
     <NeutralLanguage>de</NeutralLanguage>
     <PackageId>Codexzier.Wpf.ApplicationFramework</PackageId>
     <Product>Codexzier Wpf ApplicationFramework</Product>
-    <PackageReleaseNotes>Add descriptions.</PackageReleaseNotes>
-    <PackageVersion>0.1.2</PackageVersion>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageVersion>0.1.5</PackageVersion>
+    <Title>Codexzier WPF Application Framework</Title>
+    <RepositoryUrl>https://github.com/Codexzier/Codexzier.Wpf.ApplicationFramework</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
+    <PackageTags>WPF;</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
