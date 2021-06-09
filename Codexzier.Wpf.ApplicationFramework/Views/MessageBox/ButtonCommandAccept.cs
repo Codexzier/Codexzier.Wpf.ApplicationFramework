@@ -15,7 +15,7 @@ namespace Codexzier.Wpf.ApplicationFramework.Views.MessageBox
         public override void Execute(object parameter)
         {
             this._askBoxMessage.Execute(true);
-            EventBusManager.CloseView<MessageBoxView>(10);
+            EventBusManager.CloseView<MessageBoxView>(101);
         }
     }
 }

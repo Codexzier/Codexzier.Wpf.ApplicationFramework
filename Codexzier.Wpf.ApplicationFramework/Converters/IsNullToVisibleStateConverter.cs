@@ -5,7 +5,7 @@ using System.Windows.Data;
 
 namespace Codexzier.Wpf.ApplicationFramework.Converters
 {
-    public class IsNullToVisableStateConverter : IValueConverter
+    public class IsNullToVisibleStateConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

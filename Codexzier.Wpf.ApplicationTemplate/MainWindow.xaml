@@ -48,11 +48,20 @@
                                   Channel="1"
                                   Margin="5" />
 
+        <!-- status bar -->
         <eventBus:SideHostControl Grid.Row="0"
                                   Grid.RowSpan="3"
                                   Grid.ColumnSpan="2" Grid.Column="0"
                                   HorizontalAlignment="Stretch"
                                   Channel="100"
+                                  VerticalAlignment="Stretch" />
+        
+        <!-- messagebox -->
+        <eventBus:SideHostControl Grid.Row="0"
+                                  Grid.RowSpan="3"
+                                  Grid.ColumnSpan="2" Grid.Column="0"
+                                  HorizontalAlignment="Stretch"
+                                  Channel="101"
                                   VerticalAlignment="Stretch" />
     </Grid>
 </Window>
