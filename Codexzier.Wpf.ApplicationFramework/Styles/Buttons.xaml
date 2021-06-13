@@ -76,6 +76,9 @@
                             <Setter TargetName="BaseFrameBorder2" Property="BorderBrush" Value="{StaticResource BrushMonochromaticBlueGrayE}" />
                             <Setter TargetName="BaseCornerBorder3" Property="Stroke" Value="{StaticResource BrushMonochromaticBlueGrayE}" />
                         </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
 

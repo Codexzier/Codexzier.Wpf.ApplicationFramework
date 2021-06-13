@@ -12,32 +12,27 @@ namespace Codexzier.Wpf.ApplicationFramework.Views.MessageBox
 
             this._viewModel = (MessageBoxViewModel)this.DataContext;
 
-            EventBusManager.Register<MessageBoxView, MessageBoxMessage>(this.BaseMessageEvent);
-            EventBusManager.Register<MessageBoxView, AskBoxMessage>(this.ASkMessageEvent);
+            EventBusManager.Register<MessageBoxView, MessageBoxMessage>(this.TryPrepareMessageBox);
+            EventBusManager.Register<MessageBoxView, AskBoxMessage>(this.TryPrepareAskBoxMessage);
         }
 
-        private void ASkMessageEvent(IMessageContainer arg)
+        private void TryPrepareMessageBox(IMessageContainer arg)
         {
-            this.BaseMessageEvent(arg);
-
-            if (arg is AskBoxMessage askBoxMessage)
-            {
-                this._viewModel.LabelAccept = "Accept";
-                this._viewModel.CommandAccept = new ButtonCommandAccept(askBoxMessage);
-                this._viewModel.CommandCancel = new ButtonCommandCancel();
-            }
-
+            if (!(arg is MessageBoxMessage boxMessage)) return ;
+            
+            this._viewModel.CommandAccept = new ButtonCommandOk();
+            this._viewModel.LabelAccept = "OK";
+            this._viewModel.Title = boxMessage.Title;
+            this._viewModel.Message = $"{boxMessage.Content}";
         }
 
-        private void BaseMessageEvent(IMessageContainer arg)
+        private void TryPrepareAskBoxMessage(IMessageContainer arg)
         {
-            if (arg is MessageBoxMessage boxMessage)
-            {
-                this._viewModel.CommandAccept = new ButtonCommandOk();
-                this._viewModel.LabelAccept = "OK";
-                this._viewModel.Title = boxMessage.Title;
-                this._viewModel.Message = $"{boxMessage.Content}";
-            }
+            if (!(arg is AskBoxMessage askBoxMessage)) return;
+            
+            this._viewModel.LabelAccept = "Accept";
+            this._viewModel.CommandAccept = new ButtonCommandAccept(askBoxMessage);
+            this._viewModel.CommandCancel = new ButtonCommandCancel();
         }
     }
 }

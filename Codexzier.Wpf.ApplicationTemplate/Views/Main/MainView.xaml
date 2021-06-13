@@ -3,14 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:main="clr-namespace:Codexzier.Wpf.ApplicationTemplate.Views.Main"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.DataContext>
+        <main:MainViewModel />
+    </UserControl.DataContext>
     <Grid>
         <!-- Your Content -->
         
         <StackPanel>
             <Label Content="put your content here" />
-            <Button Content="Test Button" Height="30" />
+            <Button Content="Test MessageBox" Height="30" Command="{Binding CommandMessageBox}" />
+            <Button Content="Test AskMessageBox" Height="30" Command="{Binding CommandAskMessageBox}" />
             <ComboBox SelectedIndex="0">
                 <ComboBoxItem Content="Test" />
             </ComboBox>

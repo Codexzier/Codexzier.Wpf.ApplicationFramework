@@ -8,11 +8,14 @@ namespace Codexzier.Wpf.ApplicationFramework.Views.Base
 {
     public static class SimpleStatusOverlays
     {
+        public static int MessageBoxChannel = 101;
+        public static int ActivityChannel = 100;
+        
         public static void Show(string title, string message)
         {
             Application.Current.Dispatcher.Invoke(delegate
             {
-                EventBusManager.Send<MessageBoxView, MessageBoxMessage>(new MessageBoxMessage(title, message), 10, true);
+                EventBusManager.Send<MessageBoxView, MessageBoxMessage>(new MessageBoxMessage(title, message), MessageBoxChannel, true);
             });
         }
 
@@ -20,7 +23,7 @@ namespace Codexzier.Wpf.ApplicationFramework.Views.Base
         {
             Application.Current.Dispatcher.Invoke(delegate
             {
-                EventBusManager.OpenView<ActivityLoadingView>(10);
+                EventBusManager.OpenView<ActivityLoadingView>(ActivityChannel);
             });
         }
 
@@ -28,15 +31,15 @@ namespace Codexzier.Wpf.ApplicationFramework.Views.Base
         {
             Application.Current.Dispatcher.Invoke(delegate
             {
-                EventBusManager.CloseView<ActivityLoadingView>(10);
+                EventBusManager.CloseView<ActivityLoadingView>(ActivityChannel);
             });
         }
 
-        public static void ShowAsk(string title, string message, Action<bool> safeData)
+        public static void ShowAsk(string title, string message, Action<bool> doingByPressedOk)
         {
             Application.Current.Dispatcher.Invoke(delegate
             {
-                EventBusManager.Send<MessageBoxView, AskBoxMessage>(new AskBoxMessage(title, message, safeData), 10, true);
+                EventBusManager.Send<MessageBoxView, AskBoxMessage>(new AskBoxMessage(title, message, doingByPressedOk), MessageBoxChannel, true);
             });
         }
     }

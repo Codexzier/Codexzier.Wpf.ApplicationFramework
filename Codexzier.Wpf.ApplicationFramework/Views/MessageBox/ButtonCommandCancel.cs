@@ -7,7 +7,7 @@ namespace Codexzier.Wpf.ApplicationFramework.Views.MessageBox
     {
         public override void Execute(object parameter)
         {
-            EventBusManager.CloseView<MessageBoxView>(10);
+            EventBusManager.CloseView<MessageBoxView>(101);
         }
     }
 }

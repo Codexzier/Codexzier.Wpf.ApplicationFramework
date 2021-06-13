@@ -4,11 +4,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:messageBox="clr-namespace:Codexzier.Wpf.ApplicationFramework.Views.MessageBox"
+             xmlns:converters="clr-namespace:Codexzier.Wpf.ApplicationFramework.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="600">
     <UserControl.DataContext>
         <messageBox:MessageBoxViewModel />
     </UserControl.DataContext>
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/Brushes.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            
+            <converters:IsNullToVisibleStateConverter x:Key="IsNullToVisibleStateConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -28,7 +38,7 @@
 
         <Grid Grid.Column="1" 
               Grid.Row="1" 
-              Background="{StaticResource BrushMonochromatischGreen_D}" 
+              Background="{StaticResource BrushMonochromaticBlueGrayD}" 
               Width="500" 
               Height="350">
             <Grid.ColumnDefinitions>
@@ -47,11 +57,11 @@
                        Text="{Binding Title}"
                        FontSize="14"
                        FontWeight="Bold"
-                       Foreground="{StaticResource BrushMonochromatischGreen_A}"/>
+                       Foreground="{StaticResource BrushMonochromaticBlueGrayB}"/>
             <TextBlock Grid.Column="1" 
                        Grid.Row="1" 
                        Text="{Binding Message}"
-                       Foreground="{StaticResource BrushMonochromatischGreen_C}"
+                       Foreground="{StaticResource BrushMonochromaticBlueGrayB}"
                        FontSize="16"
                        TextWrapping="Wrap"
                        HorizontalAlignment="Center" 
@@ -65,7 +75,8 @@
                 <Button Content="Cancel" 
                         HorizontalAlignment="Center" 
                         Height="100"
-                        Command="{Binding CommandCancel}" />
+                        Command="{Binding CommandCancel}"
+                        Visibility="{Binding CommandCancel, Converter={StaticResource IsNullToVisibleStateConverter}}"/>
             </StackPanel>
         </Grid>
     </Grid>
