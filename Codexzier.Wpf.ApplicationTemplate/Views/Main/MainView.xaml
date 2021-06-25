@@ -35,6 +35,9 @@
                 <TabItem Header="Tab 1" />
                 <TabItem Header="Tab 2" />
             </TabControl>
+            
+            <TextBlock Text="{Binding Value1}" />
+            <TextBox Text="{Binding Value1}" />
         </StackPanel>
     </Grid>
 </UserControl>

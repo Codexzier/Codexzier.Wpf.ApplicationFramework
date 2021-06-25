@@ -7,6 +7,7 @@ namespace Codexzier.Wpf.ApplicationTemplate.Views.Main
     {
         private ICommand _commandMessageBox;
         private ICommand _commandAskMessageBox;
+        private double _value1 = 123.456d;
 
         public ICommand CommandMessageBox
         {
@@ -25,6 +26,16 @@ namespace Codexzier.Wpf.ApplicationTemplate.Views.Main
             {
                 this._commandAskMessageBox = value;
                 this.OnNotifyPropertyChanged(nameof(this.CommandAskMessageBox));
+            }
+        }
+
+        public double Value1
+        {
+            get => this._value1;
+            set
+            {
+                this._value1 = value;
+                this.OnNotifyPropertyChanged(nameof(Value1));
             }
         }
     }
