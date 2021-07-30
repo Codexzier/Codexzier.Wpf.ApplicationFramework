@@ -5,7 +5,7 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.Diagram
     {
         public double Value { get; set; }
         public string ToolTipText { get; set; }
-
         public bool SetHighlightMark { get; set; }
+        public int SetColor { get; set; }
     }
 }

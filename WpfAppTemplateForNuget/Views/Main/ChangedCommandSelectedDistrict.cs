@@ -11,7 +11,10 @@ namespace WpfAppTemplateForNuget.Views.Main
         {
             if (parameter == null) return;
 
-            if (!EventBusManager.IsViewOpen<CountyView>(1)) EventBusManager.OpenView<CountyView>(1);
+            if (!EventBusManager.IsViewOpen<CountyView>(1))
+            {
+                EventBusManager.OpenView<CountyView>(1);
+            }
 
             EventBusManager.Send<CountyView, BaseMessage>(new BaseMessage(parameter), 1);
         }

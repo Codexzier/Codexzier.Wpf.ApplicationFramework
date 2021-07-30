@@ -7,6 +7,15 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.Diagram
 {
     public partial class DiagramControl
     {
+        public static readonly DependencyProperty BarsFromRightToLeftProperty = DependencyProperty.Register(
+            "BarsFromRightToLeft", typeof(bool), typeof(DiagramControl), new PropertyMetadata(default(bool)));
+
+        public bool BarsFromRightToLeft
+        {
+            get => (bool)this.GetValue(BarsFromRightToLeftProperty);
+            set => this.SetValue(BarsFromRightToLeftProperty, value);
+        }
+
         public double Scale
         {
             get => (double)this.GetValue(ScaleProperty);
@@ -65,6 +74,9 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.Diagram
                 control.RenderSize = new Size(control.Width, control.Height);
             }
 
+            control.SimpleDiagram.FlowDirection =
+                control.BarsFromRightToLeft ? FlowDirection.RightToLeft : FlowDirection.LeftToRight;
+
             control._barItems.Clear();
             control.SimpleDiagram.Children.Clear();
 
@@ -80,7 +92,19 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.Diagram
             {
                 var heightValue = item.Value / control.Scale * heightScale;
 
-                var barItem = new BarItem(widthPerResult, heightValue, item.ToolTipText, item.Value, item.SetHighlightMark, control.AnimationOn);
+                if (heightValue < 0)
+                {
+                    heightValue = 0;
+                }
+
+                var barItem = new BarItem(
+                    widthPerResult, 
+                    heightValue,
+                    item.ToolTipText,
+                    item.Value, 
+                    item.SetHighlightMark, 
+                    item.SetColor,
+                    control.AnimationOn);
 
                 control.SimpleDiagram.Children.Add(barItem.Bar);
                 control._barItems.Add(barItem);
