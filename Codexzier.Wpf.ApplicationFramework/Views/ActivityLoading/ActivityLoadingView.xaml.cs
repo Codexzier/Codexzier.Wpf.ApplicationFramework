@@ -5,12 +5,9 @@ namespace Codexzier.Wpf.ApplicationFramework.Views.ActivityLoading
 {
     public partial class ActivityLoadingView
     {
-        //private readonly ActivityLoadingViewModel _viewModel;
         public ActivityLoadingView()
         {
             this.InitializeComponent();
-
-            //this._viewModel = (ActivityLoadingViewModel)this.DataContext;
             EventBusManager.Register<ActivityLoadingView, BaseMessage>(this.BaseMessageEvent);
         }
 
