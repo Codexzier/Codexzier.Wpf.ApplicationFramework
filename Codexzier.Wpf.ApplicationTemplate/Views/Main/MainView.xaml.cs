@@ -1,6 +1,7 @@
 using Codexzier.Wpf.ApplicationFramework.Commands;
 using Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Codexzier.Wpf.ApplicationFramework.Views.Base;
@@ -21,9 +22,14 @@ namespace Codexzier.Wpf.ApplicationTemplate.Views.Main
             EventBusManager.Register<MainView, BaseMessage>(this.BaseMessageEvent);
         }
 
-        private void BaseMessageEvent(IMessageContainer obj)
+        private async void BaseMessageEvent(IMessageContainer obj)
         {
             // do things
+            SimpleStatusOverlays.ActivityOn();
+
+            await Task.Delay(200);
+
+            SimpleStatusOverlays.ActivityOff();
         }
     }
 
