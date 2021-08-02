@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Codexzier.Wpf.ApplicationTemplate.Views.SecondTab"
              xmlns:GameTree="clr-namespace:Codexzier.Wpf.ApplicationFramework.Controls.GameTree;assembly=Codexzier.Wpf.ApplicationFramework" x:Class="Codexzier.Wpf.ApplicationTemplate.Views.SecondTab.SecondTabView"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="1000">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -21,10 +21,25 @@
 
         <TextBlock Text="Second tab" FontSize="30" Foreground="AliceBlue" />
         <GameTree:GameTreeControl Grid.Column="0" Grid.Row="1" 
-                                  Width="500"
-                                  Height="300"
-                                  HorizontalAlignment="Left" 
+                                  HorizontalAlignment="Stretch"
                                   Margin="0" 
-                                  VerticalAlignment="Top"/>
+                                  VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5">
+            <GameTree:GameTreeControl.LayoutTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.5" ScaleY="0.5"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </GameTree:GameTreeControl.LayoutTransform>
+            <GameTree:GameTreeControl.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1" ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0" Y="0"/>
+                </TransformGroup>
+            </GameTree:GameTreeControl.RenderTransform>
+        </GameTree:GameTreeControl>
     </Grid>
 </UserControl>

@@ -18,7 +18,7 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
 
         public override void OnApplyTemplate()
         {
-            this.CreateTree(3);
+            this.CreateTree(8);
             //TestGamingTree();
         }
 
@@ -28,16 +28,40 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
             for (int i = 0; i < countPlayer; i++)
             {
                 AddColumn();
-                AddPlayer(i, 0);
+                AddNode(i, 0);
             }
 
-            AddDistanceRow();
-            AddRow();
-            AddNode(0, 2, 2);
+            var isStraight = countPlayer % 2 == 0;
+            var plusNode = isStraight ? 0 : 1;
+            var latePlus = false;
+            //var countMatches = (int)Math.Sqrt(countPlayer) + (isStraight ? 2 : 1);
+            var countMatches = countPlayer / 2 + (isStraight? 0: 1);
 
-            if(countPlayer % 2 == 1)
+            var lastCountNodes = countPlayer;
+            for (int iNextRow = 0; iNextRow < countMatches; iNextRow++)
             {
-                AddNode(2, 2);
+                this.AddDistanceRow();
+                this.AddRow();
+
+                var addNodes = lastCountNodes / 2;
+                
+                for (int i = 0; i < addNodes + plusNode; i++)
+                {
+                    AddNode((i * 2) + iNextRow, 2 + (iNextRow * 2), 2);
+                }
+
+                if(isStraight && !latePlus)
+                {
+                    plusNode++;
+                    latePlus = true;
+                }
+
+                if (countPlayer % 2 == 1 && isStraight)
+                {
+                    AddNode(countPlayer, 2);
+                }
+
+                lastCountNodes = addNodes;
             }
         }
 
@@ -50,10 +74,10 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
             AddRow();
 
             // spieler eins
-            AddPlayer(0, 0);
+            AddNode(0, 0);
 
             // spieler zwei
-            AddPlayer(1, 0);
+            AddNode(1, 0);
 
             // abstands Zeile
             AddDistanceRow();
@@ -69,7 +93,7 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
             AddColumn();
 
             // spieler drei
-            AddPlayer(2, 0);
+            AddNode(2, 0);
 
             // gewinner 2
             AddNode(2, 2);
@@ -91,26 +115,41 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
             this.MainGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(10, GridUnitType.Pixel) });
         }
 
-        private void AddPlayer(int column, int row)
-        {
-            var rectPlayer = new Rectangle { Width = 200, Height = 100 };
-            rectPlayer.SetValue(Grid.ColumnProperty, column);
-            rectPlayer.SetValue(Grid.RowProperty, row);
-            rectPlayer.Fill = Brushes.Gray;
-            rectPlayer.Margin = new Thickness(5);
-            this.MainGrid.Children.Add(rectPlayer);
-        }
-
         private void AddNode(int column, int row, int columnSpan = 1)
         {
-            var rectNode = new Rectangle { Width = 200, Height = 100 };
-            rectNode.SetValue(Grid.ColumnProperty, column);
-            rectNode.SetValue(Grid.ColumnSpanProperty, columnSpan);
-            rectNode.SetValue(Grid.RowProperty, row);
-            rectNode.Fill = Brushes.Gray;
-            rectNode.Margin = new Thickness(5);
+            var grid = new Grid
+            {
+                Width = 200,
+                Height = 100,
+                MinWidth = 200,
+                MinHeight = 100
+            };
+            grid.SetValue(Grid.ColumnProperty, column);
+            grid.SetValue(Grid.ColumnSpanProperty, columnSpan);
+            grid.SetValue(Grid.RowProperty, row);
 
-            this.MainGrid.Children.Add(rectNode);
+            var rectNode = new Rectangle
+            {
+                Width = 200,
+                Height = 100,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                Opacity = .7,
+                Fill = Brushes.Gray,
+                Margin = new Thickness(5)
+            };
+
+            grid.Children.Add(rectNode);
+
+            var text = new TextBlock
+            {
+                Text = $"C:{column}, R:{row}, CS:{columnSpan}",
+                Foreground = Brushes.White,
+                FontWeight = FontWeight.FromOpenTypeWeight(3)
+            };
+
+            grid.Children.Add(text);
+
+            this.MainGrid.Children.Add(grid);
         }
     }
 }
