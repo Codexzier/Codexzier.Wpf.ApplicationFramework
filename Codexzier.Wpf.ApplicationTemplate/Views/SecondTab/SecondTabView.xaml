@@ -21,8 +21,8 @@
 
         <TextBlock Text="Second tab" FontSize="30" Foreground="AliceBlue" />
         <GameTree:GameTreeControl Grid.Column="0" Grid.Row="1" 
-                                  Width="300"
-                                  Height="200"
+                                  Width="500"
+                                  Height="300"
                                   HorizontalAlignment="Left" 
                                   Margin="0" 
                                   VerticalAlignment="Top"/>

@@ -36,7 +36,7 @@ namespace Codexzier.Wpf.ApplicationTemplate.Views.SecondTab
             Debug.WriteLine($"ActivityOn, Channel {SimpleStatusOverlays.ActivityChannel}");
             SimpleStatusOverlays.ActivityOn();
 
-            await Task.Delay(2000);
+            await Task.Delay(500);
 
             Debug.WriteLine($"ActivityOff, Channel {SimpleStatusOverlays.ActivityChannel}");
             SimpleStatusOverlays.ActivityOff();
