@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -18,12 +19,15 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
 
         public override void OnApplyTemplate()
         {
-            this.CreateTree(8);
+            this.CreateTree(10);
             //TestGamingTree();
         }
 
         private void CreateTree(int countPlayer)
         {
+            var sb = new StringBuilder();
+            sb.AppendLine($"Players: {countPlayer}");
+
             AddRow();
             for (int i = 0; i < countPlayer; i++)
             {
@@ -32,10 +36,13 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
             }
 
             var isStraight = countPlayer % 2 == 0;
+            sb.AppendLine($"Ist gerade: {isStraight}");
             var plusNode = isStraight ? 0 : 1;
+            sb.AppendLine($"PlusNode: {plusNode}");
             var latePlus = false;
-            //var countMatches = (int)Math.Sqrt(countPlayer) + (isStraight ? 2 : 1);
-            var countMatches = countPlayer / 2 + (isStraight? 0: 1);
+
+            var countMatches = (countPlayer / 2) + (isStraight? 0: 1);
+            sb.AppendLine($"Count Matches: {countMatches}");
 
             var lastCountNodes = countPlayer;
             for (int iNextRow = 0; iNextRow < countMatches; iNextRow++)
@@ -44,25 +51,38 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
                 this.AddRow();
 
                 var addNodes = lastCountNodes / 2;
-                
+                sb.AppendLine($"Row: {iNextRow}, Add Nodes: {addNodes}");   
                 for (int i = 0; i < addNodes + plusNode; i++)
                 {
                     AddNode((i * 2) + iNextRow, 2 + (iNextRow * 2), 2);
+                    sb.AppendLine($"Column: {(i * 2) + iNextRow}, Row: {2 + (iNextRow * 2)}, Span: 2");
                 }
 
-                if(isStraight && !latePlus)
+                if(!latePlus)
                 {
                     plusNode++;
                     latePlus = true;
+                    sb.AppendLine($"PlusNode: {plusNode}");
                 }
 
                 if (countPlayer % 2 == 1 && isStraight)
                 {
                     AddNode(countPlayer, 2);
+                    sb.AppendLine($"AddNode Column: {countPlayer}, Row 2");
                 }
 
                 lastCountNodes = addNodes;
+                sb.AppendLine($"Last count nodes: {lastCountNodes}");
             }
+
+            var tb = new TextBlock
+            {
+                Text = sb.ToString(),
+                Foreground = Brushes.White
+            };
+            tb.SetValue(Grid.RowSpanProperty, countMatches);
+
+            this.MainGrid.Children.Add(tb);
         }
 
         private void TestGamingTree()
