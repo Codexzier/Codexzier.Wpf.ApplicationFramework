@@ -24,10 +24,13 @@ namespace Codexzier.Wpf.ApplicationTemplate.Views.Menu
     {
         public override void Execute(object parameter)
         {
-            if (EventBusManager.IsViewOpen<SecondTabView>(0)) return;
 
-            EventBusManager.OpenView<SecondTabView>(0);
-            EventBusManager.Send<SecondTabView, BaseMessage>(new BaseMessage(""), 0);
+
+
+            if (EventBusManager.IsViewOpen<SecondTabView>(1)) return;
+
+            EventBusManager.OpenView<SecondTabView>(1);
+            EventBusManager.Send<SecondTabView, BaseMessage>(new BaseMessage(""), 1);
         }
     }
 }

@@ -9,10 +9,10 @@ namespace Codexzier.Wpf.ApplicationTemplate.Views.Menu
     {
         public override void Execute(object parameter)
         {
-            if (EventBusManager.IsViewOpen<MainView>(0)) return;
+            if (EventBusManager.IsViewOpen<MainView>(1)) return;
 
-            EventBusManager.OpenView<MainView>(0);
-            EventBusManager.Send<MainView, BaseMessage>(new BaseMessage(""), 0);
+            EventBusManager.OpenView<MainView>(1);
+            EventBusManager.Send<MainView, BaseMessage>(new BaseMessage(""), 1);
         }
     }
 }

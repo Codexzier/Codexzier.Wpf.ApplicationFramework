@@ -6,40 +6,47 @@
              xmlns:local="clr-namespace:Codexzier.Wpf.ApplicationTemplate.Views.SecondTab"
              xmlns:GameTree="clr-namespace:Codexzier.Wpf.ApplicationFramework.Controls.GameTree;assembly=Codexzier.Wpf.ApplicationFramework" x:Class="Codexzier.Wpf.ApplicationTemplate.Views.SecondTab.SecondTabView"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="1000">
+             d:DesignHeight="450" d:DesignWidth="400">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*"  />
+            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <!--<RowDefinition Height="*" />-->
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Second tab" FontSize="30" Foreground="AliceBlue" />
-        <GameTree:GameTreeControl Grid.Column="0" Grid.Row="1" 
+        <TextBlock Grid.Column="1" Text="Second tab" FontSize="30" Foreground="AliceBlue" />
+        <Slider ValueChanged="Slider_ValueChanged" 
+                Value="3" 
+                Minimum="2" Maximum="20" 
+                SmallChange="1" 
+                Width="200" MaxWidth="200" 
+                Grid.Column="1"
+                Grid.Row="1" 
+                HorizontalAlignment="Left" />
+
+        <!--<ScrollViewer HorizontalScrollBarVisibility="Visible" 
+                  VerticalScrollBarVisibility="Visible" 
+                  HorizontalAlignment="Stretch" 
+                      VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="2" 
+                                  Margin="0">
+            <ItemsControl>-->
+                <GameTree:GameTreeControl  Grid.Column="1" Grid.Row="2" 
+                                  Margin="0"
                                   HorizontalAlignment="Stretch"
-                                  Margin="0" 
-                                  VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5">
-            <GameTree:GameTreeControl.LayoutTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="0.5" ScaleY="0.5"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </GameTree:GameTreeControl.LayoutTransform>
-            <GameTree:GameTreeControl.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleY="1" ScaleX="1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform X="0" Y="0"/>
-                </TransformGroup>
-            </GameTree:GameTreeControl.RenderTransform>
-        </GameTree:GameTreeControl>
+                                  VerticalAlignment="Stretch"
+                                  x:Name="gameTree" />
+            <!--</ItemsControl>
+            
+        </ScrollViewer>-->
+
+        <TextBlock Text="Test 1" Grid.Column="1" Grid.Row="3" />
+        <TextBlock Text="Test 2" Grid.Column="2" Grid.Row="2" />
     </Grid>
 </UserControl>

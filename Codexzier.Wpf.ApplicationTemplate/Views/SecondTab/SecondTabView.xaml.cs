@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Codexzier.Wpf.ApplicationFramework.Commands;
 using Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus;
+using Codexzier.Wpf.ApplicationFramework.Controls.GameTree;
 using Codexzier.Wpf.ApplicationFramework.Views.Base;
 
 namespace Codexzier.Wpf.ApplicationTemplate.Views.SecondTab
@@ -40,6 +42,22 @@ namespace Codexzier.Wpf.ApplicationTemplate.Views.SecondTab
 
             Debug.WriteLine($"ActivityOff, Channel {SimpleStatusOverlays.ActivityChannel}");
             SimpleStatusOverlays.ActivityOff();
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if(gameTree == null)
+            {
+                return;
+            }
+
+            var list = new List<GameTreeItem>();
+            for (int i = 0; i < Math.Round(e.NewValue); i++)
+            {
+                list.Add(new GameTreeItem());
+            }
+
+            gameTree.GameItems = new ObservableCollection<GameTreeItem>(list);
         }
     }
 

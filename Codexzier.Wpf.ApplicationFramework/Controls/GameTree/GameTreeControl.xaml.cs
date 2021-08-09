@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -12,19 +11,51 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
     /// </summary>
     public partial class GameTreeControl : UserControl
     {
+        public ObservableCollection<GameTreeItem> GameItems 
+        {
+            get => (ObservableCollection<GameTreeItem>)this.GetValue(GameTreeItemProperty);
+            set => this.SetValue(GameTreeItemProperty, value);
+        }
+
+        public static readonly DependencyProperty GameTreeItemProperty =
+            DependencyProperty.RegisterAttached(
+                nameof(GameItems), 
+                typeof(ObservableCollection<GameTreeItem>), 
+                typeof(GameTreeControl), 
+                new PropertyMetadata(new ObservableCollection<GameTreeItem>(), GamingItemsHasChanged));
+
+        private static void GamingItemsHasChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if(d is GameTreeControl control)
+            {
+                if(control.GameItems == null || control.GameItems.Count == 0)
+                {
+                    control.CreateTree(3);
+                    return;
+                }
+
+
+                control.CreateTree(control.GameItems.Count);
+            }
+        }
+
         public GameTreeControl()
         {
             InitializeComponent();
         }
 
-        public override void OnApplyTemplate()
-        {
-            this.CreateTree(10);
-            //TestGamingTree();
-        }
+        //public override void OnApplyTemplate()
+        //{
+        //    this.CreateTree(10);
+        //    //TestGamingTree();
+        //}
 
         private void CreateTree(int countPlayer)
         {
+            this.MainGrid.Children.Clear();
+            this.MainGrid.ColumnDefinitions.Clear();
+            this.MainGrid.RowDefinitions.Clear();
+
             AddRow();
             for (int i = 0; i < countPlayer; i++)
             {
@@ -45,7 +76,6 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
             }
 
             var addOneCanSet = false;
-            //var addOneMore = isStraight ? 0 : 1;
 
             var lastCountNodes = countPlayer; // + addOneMore;
             var countMatches = lastCountNodes / 2;
@@ -55,7 +85,6 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
                 this.AddDistanceRow();
                 this.AddRow();
 
-                //var addNodes = lastCountNodes / 2;
                 if (addOneCanSet)
                 {
                     lastCountNodes--;
@@ -136,26 +165,24 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
             grid.SetValue(Grid.ColumnSpanProperty, columnSpan);
             grid.SetValue(Grid.RowProperty, row);
 
-            var rectNode = new Rectangle
+            var rectNode = new GameTreeItemControl
             {
                 Width = 200,
                 Height = 100,
                 HorizontalAlignment = HorizontalAlignment.Stretch,
-                Opacity = .7,
-                Fill = Brushes.Gray,
-                Margin = new Thickness(5)
+                Opacity = .7
             };
 
             grid.Children.Add(rectNode);
 
-            var text = new TextBlock
-            {
-                Text = $"C:{column}, R:{row}, CS:{columnSpan}",
-                Foreground = Brushes.White,
-                FontWeight = FontWeight.FromOpenTypeWeight(3)
-            };
+            //var text = new TextBlock
+            //{
+            //    Text = $"C:{column}, R:{row}, CS:{columnSpan}",
+            //    Foreground = Brushes.White,
+            //    FontWeight = FontWeight.FromOpenTypeWeight(3)
+            //};
 
-            grid.Children.Add(text);
+            //grid.Children.Add(text);
 
             this.MainGrid.Children.Add(grid);
         }

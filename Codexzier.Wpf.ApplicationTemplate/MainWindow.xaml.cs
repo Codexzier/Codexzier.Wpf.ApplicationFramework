@@ -44,8 +44,8 @@ namespace Codexzier.Wpf.ApplicationTemplate
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Start the main view
-            EventBusManager.OpenView<MainView>(0);
-            EventBusManager.Send<MainView, BaseMessage>(new BaseMessage(null), 0);
+            EventBusManager.OpenView<MainView>(1);
+            EventBusManager.Send<MainView, BaseMessage>(new BaseMessage(null), 1);
         }
 
         /// <summary>
