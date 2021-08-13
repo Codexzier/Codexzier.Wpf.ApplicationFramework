@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -30,12 +32,12 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
             {
                 if(control.GameItems == null || control.GameItems.Count == 0)
                 {
-                    control.CreateTree(3);
+                    var list = new List<GameTreeItem>();
+                    control.CreateTree(list);
                     return;
                 }
 
-
-                control.CreateTree(control.GameItems.Count);
+                control.CreateTree(control.GameItems);
             }
         }
 
@@ -44,23 +46,30 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
             InitializeComponent();
         }
 
-        //public override void OnApplyTemplate()
-        //{
-        //    this.CreateTree(10);
-        //    //TestGamingTree();
-        //}
+        public override void OnApplyTemplate()
+        {
+            var list = new List<GameTreeItem>();
 
-        private void CreateTree(int countPlayer)
+
+            this.CreateTree(list);
+        }
+
+        private void CreateTree(IEnumerable<GameTreeItem> gameTreeItems)
         {
             this.MainGrid.Children.Clear();
             this.MainGrid.ColumnDefinitions.Clear();
             this.MainGrid.RowDefinitions.Clear();
+            this.PlayingDirections.Children.Clear();
+            int countPlayer = gameTreeItems.Count();
+            var gameTreeItemsArray = gameTreeItems.ToArray();
 
             AddRow();
             for (int i = 0; i < countPlayer; i++)
             {
                 AddColumn();
-                AddNode(i, 0);
+                AddNode(gameTreeItemsArray[i], i, 0);
+
+                AddNodeConnectionStart(i, 0);
             }
 
             bool isStraight = countPlayer % 2 == 0;
@@ -71,7 +80,13 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
                 this.AddRow();
                 for (int iNextColumn = 0; iNextColumn < (countPlayer + 1) / 2; iNextColumn++)
                 {
-                    AddNode(iNextColumn * 2, 2, 2);
+                    // inialisiere nächstes match
+                    var t = gameTreeItemsArray[iNextColumn];
+
+                    AddNode(new GameTreeItem(), iNextColumn * 2, 2, 2);
+                    AddNodeConnectionEnd(iNextColumn, 1);
+
+                    AddNodeConnectionStart(iNextColumn, 1, false);
                 }
             }
 
@@ -98,42 +113,17 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
                 for (int i = 0; i < lastCountNodes; i++)
                 {
                     AddNode((i * 2) + iNextRow + (isStraight ? 0 : 1), 2 + (iNextRow * 2) + (isStraight ? 0 : 2), 2);
+
+                    var colNode = (i * 2) + (isStraight ? 1 : 2) + iNextRow;
+                    var rowNode = (isStraight ? 1 : 2) + iNextRow;
+                    AddNodeConnectionEnd(colNode, rowNode);
+
+                    if(iNextRow < countMatches - 1)
+                    {
+                        AddNodeConnectionStart(colNode, rowNode, false);
+                    }
                 }
             }
-        }
-
-        private void TestGamingTree()
-        {
-            // zwei spieler ...
-            AddColumn();
-            AddColumn();
-            // ... in einer Zeile
-            AddRow();
-
-            // spieler eins
-            AddNode(0, 0);
-
-            // spieler zwei
-            AddNode(1, 0);
-
-            // abstands Zeile
-            AddDistanceRow();
-
-            // gewinner Zeile
-            AddRow();
-
-            // gewinner
-            AddNode(0, 2, 2);
-
-            // ################################
-            // dritter Spieler
-            AddColumn();
-
-            // spieler drei
-            AddNode(2, 0);
-
-            // gewinner 2
-            AddNode(2, 2);
         }
 
         private void AddColumn()
@@ -144,15 +134,14 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
         private void AddRow()
         {
             this.MainGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(20, GridUnitType.Auto) });
-
         }
 
         private void AddDistanceRow()
         {
-            this.MainGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(10, GridUnitType.Pixel) });
+            this.MainGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(30, GridUnitType.Pixel) });
         }
 
-        private void AddNode(int column, int row, int columnSpan = 1)
+        private void AddNode(GameTreeItem item, int column, int row, int columnSpan = 1)
         {
             var grid = new Grid
             {
@@ -185,6 +174,51 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
             //grid.Children.Add(text);
 
             this.MainGrid.Children.Add(grid);
+        }
+
+        private void AddNodeConnectionStart(int column, int row, bool half = true)
+        {
+            var x = (200 * column) + (half ? 100 : 0);
+            var y = (row > 0 ? (100 + (130 * row)) : (100 * row)) + (row == 0 ? 90 : -10);
+            var el = new Ellipse
+            {
+                Width = 10,
+                Height = 10,
+                Fill = Brushes.Green,
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top,
+                Margin = new Thickness(
+                    x,
+                    y, 
+                    0, 0)
+            };
+
+            this.PlayingDirections.Children.Add(el);
+
+            var text = new TextBlock
+            {
+                Text = $"pos: {x} {y}",
+                Foreground = Brushes.White,
+                FontWeight = FontWeight.FromOpenTypeWeight(3),
+                Margin = new Thickness(x, y, 0, 0)
+            };
+            this.PlayingDirections.Children.Add(text);
+        }
+
+        private void AddNodeConnectionEnd(int column, int row)
+        {
+            var pos = new Point(200 * column, 130 * row);
+            var el = new Ellipse
+            {
+                Width = 10,
+                Height = 10,
+                Fill = Brushes.Red,
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top,
+                Margin = new Thickness(pos.X, pos.Y, 0, 0)
+            };
+
+            this.PlayingDirections.Children.Add(el);
         }
     }
 }

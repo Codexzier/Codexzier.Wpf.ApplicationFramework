@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Codexzier.Wpf.ApplicationTemplate.Views.SecondTab"
              xmlns:GameTree="clr-namespace:Codexzier.Wpf.ApplicationFramework.Controls.GameTree;assembly=Codexzier.Wpf.ApplicationFramework" x:Class="Codexzier.Wpf.ApplicationTemplate.Views.SecondTab.SecondTabView"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="400">
+             d:DesignHeight="750" Width="1300">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />

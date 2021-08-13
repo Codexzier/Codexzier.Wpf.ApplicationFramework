@@ -6,15 +6,18 @@
              xmlns:local="clr-namespace:Codexzier.Wpf.ApplicationFramework.Controls.GameTree"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <!--<Grid>-->
+    <Border BorderBrush="AliceBlue" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <ScrollViewer HorizontalScrollBarVisibility="Visible" 
-                  VerticalScrollBarVisibility="Visible" 
-                  HorizontalAlignment="Stretch" 
-                      VerticalAlignment="Stretch">
+                    VerticalScrollBarVisibility="Visible" 
+                    HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch">
             <Border BorderBrush="AliceBlue" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <Grid x:Name="MainGrid" />
+                <Grid>
+                    <Grid x:Name="MainGrid" />
+                    <Grid x:Name="PlayingDirections" />
+                </Grid>
             </Border>
 
-    </ScrollViewer>
-    <!--</Grid>-->
+        </ScrollViewer>
+    </Border>
 </UserControl>
