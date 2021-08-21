@@ -54,7 +54,14 @@ namespace Codexzier.Wpf.ApplicationTemplate.Views.SecondTab
             var list = new List<GameTreeItem>();
             for (int i = 0; i < Math.Round(e.NewValue); i++)
             {
-                list.Add(new GameTreeItem());
+                list.Add(new GameTreeItem()
+                {
+                    GameId = 1, 
+                    ItemPositionHorizontal = i, 
+                    ItemPositionVertikal = 0,
+                    Player1 = new PlayerItem() { Name = $"Player {i}" , Score = i * 7 },
+                    Player2 = new  PlayerItem() { Name = $"Player {i * 2}", Score = i * 17 }
+                });
             }
 
             gameTree.GameItems = new ObservableCollection<GameTreeItem>(list);

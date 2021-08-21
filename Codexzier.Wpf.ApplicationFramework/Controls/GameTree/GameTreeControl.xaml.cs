@@ -112,7 +112,7 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
 
                 for (int i = 0; i < lastCountNodes; i++)
                 {
-                    AddNode((i * 2) + iNextRow + (isStraight ? 0 : 1), 2 + (iNextRow * 2) + (isStraight ? 0 : 2), 2);
+                    AddNode(new GameTreeItem(), (i * 2) + iNextRow + (isStraight ? 0 : 1), 2 + (iNextRow * 2) + (isStraight ? 0 : 2), 2);
 
                     var colNode = (i * 2) + (isStraight ? 1 : 2) + iNextRow;
                     var rowNode = (isStraight ? 1 : 2) + iNextRow;
@@ -161,6 +161,8 @@ namespace Codexzier.Wpf.ApplicationFramework.Controls.GameTree
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 Opacity = .7
             };
+
+            rectNode.SetGameTreeItemValue(item);
 
             grid.Children.Add(rectNode);
 
