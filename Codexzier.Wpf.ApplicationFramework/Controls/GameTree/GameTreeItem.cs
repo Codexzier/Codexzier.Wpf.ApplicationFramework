@@ -2,6 +2,12 @@
 {
     public class GameTreeItem
     {
+        public GameTreeItem()
+        {
+            this.Player1 = new PlayerItem();
+            this.Player2 = new PlayerItem();
+        }
+
         public int GameId { get; set; }
 
         public int ItemPositionHorizontal { get; set; }

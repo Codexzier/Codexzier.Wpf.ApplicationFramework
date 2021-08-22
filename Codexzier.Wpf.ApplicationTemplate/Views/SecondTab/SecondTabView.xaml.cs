@@ -1,22 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Codexzier.Wpf.ApplicationFramework.Commands;
+﻿using Codexzier.Wpf.ApplicationFramework.Commands;
 using Codexzier.Wpf.ApplicationFramework.Components.Ui.EventBus;
 using Codexzier.Wpf.ApplicationFramework.Controls.GameTree;
 using Codexzier.Wpf.ApplicationFramework.Views.Base;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace Codexzier.Wpf.ApplicationTemplate.Views.SecondTab
 {
@@ -29,6 +21,8 @@ namespace Codexzier.Wpf.ApplicationTemplate.Views.SecondTab
         public SecondTabView()
         {
             InitializeComponent();
+
+            this._viewModel = (SecondTabViewModel) this.DataContext;
 
             EventBusManager.Register<SecondTabView, BaseMessage>(this.BaseMessageReceiver);
         }
@@ -46,7 +40,7 @@ namespace Codexzier.Wpf.ApplicationTemplate.Views.SecondTab
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if(gameTree == null)
+            if(this._viewModel == null)
             {
                 return;
             }
@@ -59,16 +53,12 @@ namespace Codexzier.Wpf.ApplicationTemplate.Views.SecondTab
                     GameId = 1, 
                     ItemPositionHorizontal = i, 
                     ItemPositionVertikal = 0,
-                    Player1 = new PlayerItem() { Name = $"Player {i}" , Score = i * 7 },
-                    Player2 = new  PlayerItem() { Name = $"Player {i * 2}", Score = i * 17 }
+                    Player1 = new PlayerItem { Name = $"Player {i}" , Score = i * 7 },
+                    Player2 = new  PlayerItem { Name = $"Player {i * 2}", Score = i * 17 }
                 });
             }
-
-            gameTree.GameItems = new ObservableCollection<GameTreeItem>(list);
+            
+            this._viewModel.GameTreeItems = new ObservableCollection<GameTreeItem>(list);
         }
-    }
-
-    internal class SecondTabViewModel
-    {
     }
 }

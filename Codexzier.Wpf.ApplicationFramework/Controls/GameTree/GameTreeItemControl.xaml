@@ -29,10 +29,10 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Column="0" Grid.Row="0" Text="Player" FontSize="20" Margin="5" x:Name="tbPlayername" />
-            <TextBlock Grid.Column="2" Grid.Row="0" Text="Player" FontSize="20" Margin="5" x:Name="tbVsPlayername" />
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="Player" FontSize="20" Margin="5" x:Name="tbPlayername" HorizontalAlignment="Left" />
+            <TextBlock Grid.Column="2" Grid.Row="0" Text="Player" FontSize="20" Margin="5" x:Name="tbVsPlayername" HorizontalAlignment="Right" />
 
-            <Grid Grid.Column="1" Grid.Row="1" Visibility="Visible" x:Name="gridReadable">
+            <Grid Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Grid.Row="1" Visibility="Visible" x:Name="gridReadable">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
@@ -43,7 +43,7 @@
                 <TextBlock Grid.Column="1" Grid.Row="0" Text=":" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" />
                 <TextBlock Grid.Column="2" Grid.Row="0" Text="0" FontSize="30" FontWeight="Bold" x:Name="tbVsPlayerScore" />
             </Grid>
-            <Grid Grid.Column="1" Grid.Row="1" Visibility="Collapsed" x:Name="gridEditable">
+            <Grid  Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Grid.Row="1" Visibility="Collapsed" x:Name="gridEditable">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
@@ -56,8 +56,8 @@
             </Grid>
 
             <Grid Grid.Column="2" Grid.Row="1" Grid.RowSpan="2">
-                <Button x:Name="btnStartEdit" Content="Edit" Margin="10 10 0 3" Click="Button_Click" />
-                <Button x:Name="btnSaveEdit" Content="Save" Margin="10 10 0 3" Click="ButtonSave_Click" />
+                <Button x:Name="btnStartEdit" Content="Edit" Margin="10 10 3 3" HorizontalAlignment="Right" Click="Button_Click" />
+                <Button x:Name="btnSaveEdit" Content="Save" Margin="10 10 3 3" HorizontalAlignment="Right" Click="ButtonSave_Click" Visibility="Collapsed" />
             </Grid>
         </Grid>
     </Border>

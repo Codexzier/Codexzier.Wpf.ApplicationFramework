@@ -4,9 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Codexzier.Wpf.ApplicationTemplate.Views.SecondTab"
-             xmlns:GameTree="clr-namespace:Codexzier.Wpf.ApplicationFramework.Controls.GameTree;assembly=Codexzier.Wpf.ApplicationFramework" x:Class="Codexzier.Wpf.ApplicationTemplate.Views.SecondTab.SecondTabView"
+             xmlns:gameTree="clr-namespace:Codexzier.Wpf.ApplicationFramework.Controls.GameTree;assembly=Codexzier.Wpf.ApplicationFramework" 
+             x:Class="Codexzier.Wpf.ApplicationTemplate.Views.SecondTab.SecondTabView"
              mc:Ignorable="d" 
              d:DesignHeight="750" Width="1300">
+    <UserControl.DataContext>
+        <local:SecondTabViewModel />
+    </UserControl.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -37,11 +41,11 @@
                       VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="2" 
                                   Margin="0">
             <ItemsControl>-->
-                <GameTree:GameTreeControl  Grid.Column="1" Grid.Row="2" 
+                <gameTree:GameTreeControl  Grid.Column="1" Grid.Row="2" 
                                   Margin="0"
                                   HorizontalAlignment="Stretch"
                                   VerticalAlignment="Stretch"
-                                  x:Name="gameTree" />
+                                  GameItems="{Binding GameTreeItems}" />
             <!--</ItemsControl>
             
         </ScrollViewer>-->
