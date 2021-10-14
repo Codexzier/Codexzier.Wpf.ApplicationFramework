@@ -1,11 +1,12 @@
 # Nicht fertig / Not Finish
-Wie bereits der Titel aussagt, ist dieses Projekt nicht fertig. Damit ist auch gemeint, dass für keinen richtigen Einsatz fertig ist. Dazu gehört neben dem Nuget Paket, an dem ich arbeite, auch das passende Template, um ein neues Projekt zu erstellen, dass mit dem WPF ApplicationFramework funktioniert.
+Wie bereits der Titel aussagt, ist dieses Projekt noch nicht fertig. Damit ist auch gemeint, dass für keinen richtigen Einsatz fertig ist. Dazu gehört neben dem Nuget Paket, an dem ich arbeite, auch das passende Template, um aus einem vorgefertigten Vorlage ein neues Projekt erstellen zu können, dass mein WPF ApplicationFramework beinhaltet.
+Auch eine Dokumentation werde ich anlegen, damit die einsetzbaren Komponeten und Steuerelemente erklärt werden.
 
 ## Codexzier.Wpf.ApplicationFramework
-Diese Bibliothek ist dazu da meine Anwendungen nach und nach das selbe Aussehen zu verpassen. Meine Privaten erstellten Programme nutzen immer wieder einen ähnlichen Aufbau, den ich nun zusammengefasst habe.
+Diese Bibliothek ist dazu da meine Anwendungen nach und nach das selbe Aussehen zu vergeben. Meine Privaten erstellten Programme nutzen immer wieder einen ähnlichen Aufbau und daher fasste ich den Entschluss die Grundlagen zusammen zuführen. Mit jeder neuen Anwendund die ich schreibe, kommen neue Steuerelemente hinzu. Aber auch verbesserungen in der Bedienung.
 
 ## Framework Version
-Aktuell wird noch .NET Core 3.1 verwendet. Aber im grunde Funktioniert das Paket auch schon mit .NET 5. Noch übertrage ich und prüfe die Funktionsinhalte.
+Aktuell wird noch .NET Core 3.1 verwendet. Jedoch Funktioniert das Paket bereits mit .NET 5.
 
 ## In arbeit
 Dokumentationsbeschreibung
