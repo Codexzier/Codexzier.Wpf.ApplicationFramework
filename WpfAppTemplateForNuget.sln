@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
+# Blend for Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfAppTemplateForNuget", "WpfAppTemplateForNuget\WpfAppTemplateForNuget.csproj", "{45C00C0B-B1B3-446C-967C-3461F72ABE34}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codexzier.Wpf.ApplicationFramework", "Codexzier.Wpf.ApplicationFramework\Codexzier.Wpf.ApplicationFramework.csproj", "{DDC158CB-08D5-47ED-BBE6-85BC8819E9E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codexzier.Wpf.ApplicationFramework.Test", "Codexzier.Wpf.ApplicationFramework.Test\Codexzier.Wpf.ApplicationFramework.Test.csproj", "{36EA1487-69EA-421E-9F41-C8B045C4B876}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codexzier.Wpf.ApplicationFramework.Test", "Codexzier.Wpf.ApplicationFramework.Test\Codexzier.Wpf.ApplicationFramework.Test.csproj", "{36EA1487-69EA-421E-9F41-C8B045C4B876}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codexzier.Wpf.ApplicationTemplate", "Codexzier.Wpf.ApplicationTemplate\Codexzier.Wpf.ApplicationTemplate.csproj", "{337180CB-A3A4-4772-9330-B67F5252DFF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codexzier.Wpf.ApplicationTemplate", "Codexzier.Wpf.ApplicationTemplate\Codexzier.Wpf.ApplicationTemplate.csproj", "{337180CB-A3A4-4772-9330-B67F5252DFF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codexzier.Wpf.ApplicationIcons", "Codexzier.Wpf.ApplicationIcons\Codexzier.Wpf.ApplicationIcons.csproj", "{878DB84D-2A3E-4740-AC78-C5F314474C38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{337180CB-A3A4-4772-9330-B67F5252DFF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{337180CB-A3A4-4772-9330-B67F5252DFF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{337180CB-A3A4-4772-9330-B67F5252DFF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{878DB84D-2A3E-4740-AC78-C5F314474C38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{878DB84D-2A3E-4740-AC78-C5F314474C38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{878DB84D-2A3E-4740-AC78-C5F314474C38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{878DB84D-2A3E-4740-AC78-C5F314474C38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
