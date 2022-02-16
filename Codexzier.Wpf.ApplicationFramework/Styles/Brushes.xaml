@@ -4,14 +4,6 @@
         <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <!-- Brush scheme: Monochromatic blue gray -->
-    <SolidColorBrush x:Key="BrushMonochromaticBlueGrayA" Color="{StaticResource ColorMonochromaticBlueGrayA}" />
-    <SolidColorBrush x:Key="BrushMonochromaticBlueGrayB" Color="{StaticResource ColorMonochromaticBlueGrayB}" />
-    <SolidColorBrush x:Key="BrushMonochromaticBlueGrayC" Color="{StaticResource ColorMonochromaticBlueGrayC}" />
-    <SolidColorBrush x:Key="BrushMonochromaticBlueGrayD" Color="{StaticResource ColorMonochromaticBlueGrayD}" />
-    <SolidColorBrush x:Key="BrushMonochromaticBlueGrayE" Color="{StaticResource ColorMonochromaticBlueGrayE}" />
-
-
     <SolidColorBrush x:Key="BrushButtonTransparentBlack" Color="{StaticResource ColorButtonTransparentBlack}" />
 
     <SolidColorBrush x:Key="BrushBlack" Color="{StaticResource ColorBlack}" />

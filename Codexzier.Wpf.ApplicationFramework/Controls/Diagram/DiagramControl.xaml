@@ -12,7 +12,7 @@
     </UserControl.Resources>
     <Grid>
         <Border BorderThickness="1" 
-                BorderBrush="{StaticResource BrushMonochromaticBlueGrayE}" 
+                BorderBrush="{StaticResource BrushMonochromaticSchemaE}" 
                 Margin="20 0 0 0">
             <StackPanel x:Name="SimpleDiagram" 
                     Orientation="Horizontal" 
@@ -21,7 +21,7 @@
         </Border>
 
         <TextBlock x:Name="OneHundredText" Text="100" 
-                   Foreground="{StaticResource BrushMonochromaticBlueGrayE}"
+                   Foreground="{StaticResource BrushMonochromaticSchemaE}"
                    HorizontalAlignment="Left" 
                    VerticalAlignment="Bottom" 
                    FontSize="9"
@@ -29,7 +29,7 @@
         <Path x:Name="OneHundred" 
               Width="20"
               Data="M 0,0 20,0 z"
-              Stroke="{StaticResource BrushMonochromaticBlueGrayE}" 
+              Stroke="{StaticResource BrushMonochromaticSchemaE}" 
               StrokeThickness="2" 
               HorizontalAlignment="Left" 
               VerticalAlignment="Bottom" 

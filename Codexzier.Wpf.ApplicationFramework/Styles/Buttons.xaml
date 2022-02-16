@@ -12,7 +12,7 @@
         <Setter Property="FontSize" Value="24" />
         <Setter Property="FontFamily" Value="{StaticResource ControlElementButtonFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource ControlElementButtonFontSize}" />
-        <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayB}" />
+        <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticSchemaB}" />
     </Style>
 
     <!-- Used this style for text Button (oldName: ContextMenuButtonBase) -->
@@ -24,13 +24,13 @@
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Margin" Value="0 0 0 0" />
 
-        <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromaticBlueGrayC}" />
-        <Setter Property="Background" Value="{StaticResource BrushMonochromaticBlueGrayD}" />
-        <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayB}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromaticSchemaC}" />
+        <Setter Property="Background" Value="{StaticResource BrushMonochromaticSchemaD}" />
+        <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticSchemaB}" />
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{StaticResource BrushMonochromaticBlueGrayB}" />
-                <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayC}" />
+                <Setter Property="Background" Value="{StaticResource BrushMonochromaticSchemaB}" />
+                <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticSchemaC}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -44,37 +44,37 @@
                 <ControlTemplate TargetType="Button">
                     <Viewbox Width="{Binding RelativeSource={RelativeSource Self}, Path=Width}"
                              Height="{Binding RelativeSource={RelativeSource Self}, Path=Height}">
-                        <Grid Background="{StaticResource BrushMonochromaticBlueGrayD}">
+                        <Grid Background="{StaticResource BrushMonochromaticSchemaD}">
                             <Border BorderThickness="0" BorderBrush="Transparent" Margin="25 25 0 0" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="25" MinWidth="25" Padding="0" >
-                                <Path x:Name="BaseCornerBorder3" Data="F1 M 0,25 25,0 Z" Stroke="{StaticResource BrushMonochromaticBlueGrayE}" Height="25" Width="25" Margin="0" StrokeThickness="1.5" />
+                                <Path x:Name="BaseCornerBorder3" Data="F1 M 0,25 25,0 Z" Stroke="{StaticResource BrushMonochromaticSchemaE}" Height="25" Width="25" Margin="0" StrokeThickness="1.5" />
                             </Border>
-                            <Border x:Name="BaseFrameBorder" BorderThickness="1 1 1 0" BorderBrush="{StaticResource BrushMonochromaticBlueGrayE}" Margin="0 0 0 25" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Padding="2" />
-                            <Border x:Name="BaseFrameBorder2" BorderThickness="1 0 0 1" BorderBrush="{StaticResource BrushMonochromaticBlueGrayE}" Margin="0 25 25 0" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" MinHeight="25" MinWidth="25" />
+                            <Border x:Name="BaseFrameBorder" BorderThickness="1 1 1 0" BorderBrush="{StaticResource BrushMonochromaticSchemaE}" Margin="0 0 0 25" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Padding="2" />
+                            <Border x:Name="BaseFrameBorder2" BorderThickness="1 0 0 1" BorderBrush="{StaticResource BrushMonochromaticSchemaE}" Margin="0 25 25 0" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" MinHeight="25" MinWidth="25" />
 
                             <TextBlock x:Name="TextBlock" 
                                        Text="{TemplateBinding Content}"
                                        Style="{StaticResource TextBlockBase}"
-                                       Foreground="{StaticResource BrushMonochromaticBlueGrayC}" />
+                                       Foreground="{StaticResource BrushMonochromaticSchemaC}" />
                         </Grid>
                         
                     </Viewbox>
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="BaseFrameBorder" Property="BorderBrush" Value="{StaticResource BrushMonochromaticBlueGrayC}" />
-                            <Setter TargetName="BaseFrameBorder2" Property="BorderBrush" Value="{StaticResource BrushMonochromaticBlueGrayC}" />
-                            <Setter TargetName="BaseCornerBorder3" Property="Stroke" Value="{StaticResource BrushMonochromaticBlueGrayC}" />
+                            <Setter TargetName="BaseFrameBorder" Property="BorderBrush" Value="{StaticResource BrushMonochromaticSchemaC}" />
+                            <Setter TargetName="BaseFrameBorder2" Property="BorderBrush" Value="{StaticResource BrushMonochromaticSchemaC}" />
+                            <Setter TargetName="BaseCornerBorder3" Property="Stroke" Value="{StaticResource BrushMonochromaticSchemaC}" />
                             <Setter Property="Cursor" Value="Hand" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="BaseFrameBorder" Property="BorderBrush" Value="{StaticResource BrushMonochromaticBlueGrayA}" />
-                            <Setter TargetName="BaseFrameBorder2" Property="BorderBrush" Value="{StaticResource BrushMonochromaticBlueGrayA}" />
-                            <Setter TargetName="BaseCornerBorder3" Property="Stroke" Value="{StaticResource BrushMonochromaticBlueGrayA}" />
+                            <Setter TargetName="BaseFrameBorder" Property="BorderBrush" Value="{StaticResource BrushMonochromaticSchemaA}" />
+                            <Setter TargetName="BaseFrameBorder2" Property="BorderBrush" Value="{StaticResource BrushMonochromaticSchemaA}" />
+                            <Setter TargetName="BaseCornerBorder3" Property="Stroke" Value="{StaticResource BrushMonochromaticSchemaA}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="BaseFrameBorder" Property="BorderBrush" Value="{StaticResource BrushMonochromaticBlueGrayE}" />
-                            <Setter TargetName="BaseFrameBorder2" Property="BorderBrush" Value="{StaticResource BrushMonochromaticBlueGrayE}" />
-                            <Setter TargetName="BaseCornerBorder3" Property="Stroke" Value="{StaticResource BrushMonochromaticBlueGrayE}" />
+                            <Setter TargetName="BaseFrameBorder" Property="BorderBrush" Value="{StaticResource BrushMonochromaticSchemaE}" />
+                            <Setter TargetName="BaseFrameBorder2" Property="BorderBrush" Value="{StaticResource BrushMonochromaticSchemaE}" />
+                            <Setter TargetName="BaseCornerBorder3" Property="Stroke" Value="{StaticResource BrushMonochromaticSchemaE}" />
                         </Trigger>
                         <Trigger Property="IsFocused" Value="True">
                             
@@ -97,7 +97,7 @@
         <Setter Property="Height" Value="14" />
         <Setter Property="Stretch" Value="Fill"/>
         <Setter Property="Margin" Value="2"/>
-        <Setter Property="Fill" Value="{StaticResource BrushMonochromaticBlueGrayA}"/>
+        <Setter Property="Fill" Value="{StaticResource BrushMonochromaticSchemaA}"/>
     </Style>
 
     <!-- close icon -->
@@ -110,7 +110,7 @@
 
     <!-- Icon Base Button  -->
     <Style x:Key="ButtonIconBase" TargetType="Button" >
-<Setter Property="Background" Value="{StaticResource BrushMonochromaticBlueGrayA}" />
+<Setter Property="Background" Value="{StaticResource BrushMonochromaticSchemaA}" />
         <Setter Property="Content" Value="{StaticResource PathIconNewStyle}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -121,7 +121,7 @@
                              Margin="3">
                         <Border x:Name="Border" 
                                 Background="{StaticResource BrushButtonTransparentBlack}"
-                                BorderBrush="{StaticResource BrushMonochromaticBlueGrayA}" 
+                                BorderBrush="{StaticResource BrushMonochromaticSchemaA}" 
                                 BorderThickness="1">
                             <Path x:Name="pathIcon" Style="{TemplateBinding Content}" />
                         </Border>

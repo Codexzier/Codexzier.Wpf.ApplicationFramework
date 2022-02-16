@@ -38,7 +38,7 @@
 
         <Grid Grid.Column="1" 
               Grid.Row="1" 
-              Background="{StaticResource BrushMonochromaticBlueGrayD}" 
+              Background="{StaticResource BrushMonochromaticSchemaD}" 
               Width="500" 
               Height="350">
             <Grid.ColumnDefinitions>
@@ -57,11 +57,11 @@
                        Text="{Binding Title}"
                        FontSize="14"
                        FontWeight="Bold"
-                       Foreground="{StaticResource BrushMonochromaticBlueGrayB}"/>
+                       Foreground="{StaticResource BrushMonochromaticSchemaB}"/>
             <TextBlock Grid.Column="1" 
                        Grid.Row="1" 
                        Text="{Binding Message}"
-                       Foreground="{StaticResource BrushMonochromaticBlueGrayB}"
+                       Foreground="{StaticResource BrushMonochromaticSchemaB}"
                        FontSize="16"
                        TextWrapping="Wrap"
                        HorizontalAlignment="Center" 

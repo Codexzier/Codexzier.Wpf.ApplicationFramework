@@ -5,6 +5,12 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                
+                <!--<ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/BrushesMonochromatischSchemaBlueGray.xaml" />-->
+                <!--<ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/BrushesMonochromatischSchemaWhiteGray.xaml" />-->
+                <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/BrushesMonochromatischSchemaGrayWhite.xaml" />
+
+
                 <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/DefaultSetup.xaml" />
                 <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/Buttons.xaml" />
                 <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/Icons.xaml" />

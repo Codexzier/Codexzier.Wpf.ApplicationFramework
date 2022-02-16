@@ -12,7 +12,7 @@
                 <ResourceDictionary Source="../../Styles/Brushes.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <Style TargetType="TextBlock">
-                <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayE}" />
+                <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticSchemaE}" />
                 <Setter Property="Margin" Value="10 5" />
             </Style>
         </ResourceDictionary>
@@ -34,7 +34,7 @@
         
         <ListBox Grid.Row="2" 
                  x:Name="ListBoxFolder" 
-                 Background="{StaticResource BrushMonochromaticBlueGrayD}"
+                 Background="{StaticResource BrushMonochromaticSchemaD}"
                  MouseDoubleClick="ListBoxFolder_MouseDoubleClick"
                  SelectionChanged="ListBoxFolder_SelectionChanged">
             <ListBox.ItemTemplate>

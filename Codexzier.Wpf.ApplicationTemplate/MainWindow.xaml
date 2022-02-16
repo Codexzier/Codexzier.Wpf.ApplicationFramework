@@ -11,7 +11,7 @@
         WindowStartupLocation="Manual"
         Loaded="Window_Loaded"
         Closing="Window_Closing">
-    <Grid  Background="{StaticResource BrushMonochromaticBlueGrayD}">
+    <Grid  Background="{StaticResource BrushMonochromaticSchemaD}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />

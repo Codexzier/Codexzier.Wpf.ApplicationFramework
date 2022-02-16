@@ -5,17 +5,17 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="ListBoxDefault" TargetType="ListBox">
-        <Setter Property="Background" Value="{StaticResource BrushMonochromaticBlueGrayD}" />
+        <Setter Property="Background" Value="{StaticResource BrushMonochromaticSchemaD}" />
         <Setter Property="Margin" Value="1 0"/>
         <Setter Property="SelectionMode" Value="Single"/>
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromaticBlueGrayE}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromaticSchemaE}" />
     </Style>
 
     <Style TargetType="ListBoxItem">
-        <Setter Property="Background" Value="{StaticResource BrushMonochromaticBlueGrayD}" />
-        <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayE}" />
-        <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromaticBlueGrayE}" />
+        <Setter Property="Background" Value="{StaticResource BrushMonochromaticSchemaD}" />
+        <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticSchemaE}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromaticSchemaE}" />
         <Setter Property="BorderThickness" Value="1" />
     </Style>
 

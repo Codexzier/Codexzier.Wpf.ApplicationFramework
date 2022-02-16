@@ -7,13 +7,13 @@
 
     <ControlTemplate x:Key="CustomProgressBar" TargetType="ProgressBar" >
         <Grid Name="TemplateRoot" SnapsToDevicePixels="True">
-            <Border BorderThickness="1" BorderBrush="{StaticResource BrushMonochromaticBlueGrayC}" Margin="1" CornerRadius="0" Background="{TemplateBinding Background}" />
+            <Border BorderThickness="1" BorderBrush="{StaticResource BrushMonochromaticSchemaC}" Margin="1" CornerRadius="0" Background="{TemplateBinding Background}" />
             <Rectangle Name="PART_Track" Margin="1" />
             <Decorator Name="PART_Indicator" Margin="1" HorizontalAlignment="Left">
                 <Grid Name="Foreground">
                     <Rectangle Fill="Transparent" Name="Indicator" />
                     <Grid Name="Animation" ClipToBounds="True">
-                        <Border Name="PART_GlowRect" Width="100"  Margin="0" HorizontalAlignment="Left" Background="{StaticResource BrushMonochromaticBlueGrayA}"/>
+                        <Border Name="PART_GlowRect" Width="100"  Margin="0" HorizontalAlignment="Left" Background="{StaticResource BrushMonochromaticSchemaA}"/>
                     </Grid>
                     <Grid Name="Overlay" />
                 </Grid>
@@ -22,7 +22,7 @@
     </ControlTemplate>
 
     <Style x:Key="DefaultProgressBar" TargetType="ProgressBar" BasedOn="{x:Null}">
-        <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayA}" />
+        <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticSchemaA}" />
         <Setter Property="MinHeight" Value="4" />
         <Setter Property="Margin" Value="4" />
         <Setter Property="Template" Value="{StaticResource CustomProgressBar}" />

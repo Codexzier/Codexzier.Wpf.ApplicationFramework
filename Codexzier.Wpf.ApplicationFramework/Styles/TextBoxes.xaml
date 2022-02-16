@@ -6,9 +6,9 @@
     <Style TargetType="TextBox">
         <Setter Property="Margin" Value="5 2" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromaticBlueGrayE}" />
-        <Setter Property="Background" Value="{StaticResource BrushMonochromaticBlueGrayD}" />
-        <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayB}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromaticSchemaE}" />
+        <Setter Property="Background" Value="{StaticResource BrushMonochromaticSchemaD}" />
+        <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticSchemaB}" />
         <Style.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter Property="BorderBrush" Value="Transparent" />

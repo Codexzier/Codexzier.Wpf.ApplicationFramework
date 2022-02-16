@@ -7,7 +7,7 @@
     </ResourceDictionary.MergedDictionaries>
     
     <Style x:Key="ComboBoxPathArrow" TargetType="Path">
-                <Setter Property="Fill" Value="{StaticResource BrushMonochromaticBlueGrayB}" />
+                <Setter Property="Fill" Value="{StaticResource BrushMonochromaticSchemaB}" />
                 <Setter Property="HorizontalAlignment" Value="Center" />
                 <Setter Property="VerticalAlignment" Value="Center" />
                 <Setter Property="Data" Value="M 0 0 L 4 4 L 8 0 Z" />
@@ -15,9 +15,9 @@
 
             <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
                 <Border x:Name="Border"
-                        Background="{StaticResource BrushMonochromaticBlueGrayD}"
+                        Background="{StaticResource BrushMonochromaticSchemaD}"
                         CornerRadius="0"
-                        BorderBrush="{StaticResource BrushMonochromaticBlueGrayE}"
+                        BorderBrush="{StaticResource BrushMonochromaticSchemaE}"
                         BorderThickness="1">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -32,11 +32,11 @@
                 </Border>
                 <ControlTemplate.Triggers>
                     <Trigger Property="IsMouseOver" Value="true">
-                        <Setter TargetName="Arrow" Property="Fill" Value="{StaticResource BrushMonochromaticBlueGrayD}" />
-                        <Setter TargetName="Border" Property="Background" Value="{StaticResource BrushMonochromaticBlueGrayE}" />
+                        <Setter TargetName="Arrow" Property="Fill" Value="{StaticResource BrushMonochromaticSchemaD}" />
+                        <Setter TargetName="Border" Property="Background" Value="{StaticResource BrushMonochromaticSchemaE}" />
                     </Trigger>
                     <Trigger Property="IsEnabled" Value="False">
-                        <Setter TargetName="Border" Property="Background" Value="{StaticResource BrushMonochromaticBlueGrayA}" />
+                        <Setter TargetName="Border" Property="Background" Value="{StaticResource BrushMonochromaticSchemaA}" />
                     </Trigger>
                 </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -82,7 +82,7 @@
                 <Setter Property="VerticalAlignment" Value="Center" />
                 <Setter Property="FontFamily" Value="{StaticResource ControlElementButtonFontFamily}" />
                 <Setter Property="FontSize" Value="{StaticResource ControlElementButtonFontSize}" />
-                <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayE}" />
+                <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticSchemaE}" />
             </Style>
 
             <Style x:Key="TextBlockTitleDescription" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBase}">
@@ -129,9 +129,9 @@
                               MinWidth="{TemplateBinding ActualWidth}"
                               MaxHeight="{TemplateBinding MaxDropDownHeight}">
                             <Border x:Name="DropDownBorder"
-                                    Background="{StaticResource BrushMonochromaticBlueGrayD}"
+                                    Background="{StaticResource BrushMonochromaticSchemaD}"
                                     BorderThickness="1"
-                                    BorderBrush="{StaticResource BrushMonochromaticBlueGrayE}" />
+                                    BorderBrush="{StaticResource BrushMonochromaticSchemaE}" />
                             <ScrollViewer Margin="1,6,2,6" SnapsToDevicePixels="True">
                                 <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
                             </ScrollViewer>
@@ -143,7 +143,7 @@
                         <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95" />
                     </Trigger>
                     <Trigger Property="IsEnabled" Value="false">
-                        <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayB}" />
+                        <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticSchemaB}" />
                     </Trigger>
                     <Trigger Property="IsGrouping" Value="true">
                         <Setter Property="ScrollViewer.CanContentScroll" Value="false" />
@@ -160,15 +160,15 @@
             </ControlTemplate>
 
             <Style x:Key="ComboBoxItemTemplate" TargetType="ComboBoxItem">
-                <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayE}" />
+                <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticSchemaE}" />
                 <Setter Property="FontSize" Value="{StaticResource ControlElementButtonFontSize}" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="ComboBoxItem">
                             <Border x:Name="ContentBorder" 
-                                    Background="{StaticResource BrushMonochromaticBlueGrayD}" 
+                                    Background="{StaticResource BrushMonochromaticSchemaD}" 
                                     BorderThickness="3 0 0 0" 
-                                    BorderBrush="{StaticResource BrushMonochromaticBlueGrayA}"
+                                    BorderBrush="{StaticResource BrushMonochromaticSchemaA}"
                                     HorizontalAlignment="Stretch">
                                 <ContentPresenter Margin="5 2"
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -179,18 +179,18 @@
                                 <Trigger Property="IsSelected" Value="True">
                                     <Setter TargetName="ContentBorder" 
                                             Property="Background"
-                                            Value="{StaticResource BrushMonochromaticBlueGrayD}" />
+                                            Value="{StaticResource BrushMonochromaticSchemaD}" />
                                     <Setter TargetName="ContentBorder" 
                                             Property="BorderBrush"
-                                            Value="{StaticResource BrushMonochromaticBlueGrayE}" />
+                                            Value="{StaticResource BrushMonochromaticSchemaE}" />
                                 </Trigger>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="ContentBorder" 
                                             Property="Background"
-                                            Value="{StaticResource BrushMonochromaticBlueGrayA}" />
+                                            Value="{StaticResource BrushMonochromaticSchemaA}" />
                                     <Setter TargetName="ContentBorder" 
                                             Property="BorderBrush"
-                                            Value="{StaticResource BrushMonochromaticBlueGrayE}" />
+                                            Value="{StaticResource BrushMonochromaticSchemaE}" />
                                     
                                 </Trigger>
                             </ControlTemplate.Triggers>
@@ -213,9 +213,9 @@
                 <Setter Property="Template" Value="{StaticResource ComboBoxItemContentTemplate}" />
                 <Setter Property="ItemContainerStyle" Value="{StaticResource ComboBoxItemTemplate}" />
                 <Setter Property="Margin" Value="5 2" />
-                <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromaticBlueGrayE}" />
-                <Setter Property="Background" Value="{StaticResource BrushMonochromaticBlueGrayD}" />
-                <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayC}" />
+                <Setter Property="BorderBrush" Value="{StaticResource BrushMonochromaticSchemaE}" />
+                <Setter Property="Background" Value="{StaticResource BrushMonochromaticSchemaD}" />
+                <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticSchemaC}" />
                 
                 <Setter Property="ItemTemplate">
                     <Setter.Value>

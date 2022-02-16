@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Codexzier.Wpf.ApplicationFramework;component/Styles/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- Brush scheme: Monochromatic blue gray -->
+    <SolidColorBrush x:Key="BrushMonochromaticSchemaA" Color="#FF2C2C2C" />
+    <SolidColorBrush x:Key="BrushMonochromaticSchemaB" Color="#FFDADADA" />
+    <SolidColorBrush x:Key="BrushMonochromaticSchemaC" Color="#FFB8B8B8" />
+    <SolidColorBrush x:Key="BrushMonochromaticSchemaD" Color="#FF424242" />
+    <SolidColorBrush x:Key="BrushMonochromaticSchemaE" Color="#FFB8B8B8" />
+
+</ResourceDictionary>

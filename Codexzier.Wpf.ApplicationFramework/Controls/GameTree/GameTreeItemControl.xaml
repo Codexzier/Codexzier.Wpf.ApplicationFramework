@@ -9,13 +9,13 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <Style TargetType="TextBlock">
-                <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayC}" />
+                <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticSchemaC}" />
             </Style>
         </ResourceDictionary>
     </UserControl.Resources>
     <Border BorderThickness="2" CornerRadius="5" 
-            BorderBrush="{StaticResource BrushMonochromaticBlueGrayC}" 
-            Background="{StaticResource BrushMonochromaticBlueGrayD}" 
+            BorderBrush="{StaticResource BrushMonochromaticSchemaC}" 
+            Background="{StaticResource BrushMonochromaticSchemaD}" 
             Margin="5">
         <Grid>
             <Grid.ColumnDefinitions>

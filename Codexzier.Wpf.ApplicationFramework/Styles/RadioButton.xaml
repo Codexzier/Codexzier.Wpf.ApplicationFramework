@@ -5,6 +5,6 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="RadioButton">
-        <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticBlueGrayE}" />
+        <Setter Property="Foreground" Value="{StaticResource BrushMonochromaticSchemaE}" />
     </Style>
 </ResourceDictionary>
