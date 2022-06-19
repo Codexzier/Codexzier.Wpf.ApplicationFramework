@@ -1,15 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <Version>0.1.7.0</Version>
     <Authors>Johannes Paul Langner</Authors>
     <Company>Codexzier</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
-    <AssemblyVersion>0.1.7.0</AssemblyVersion>
-    <FileVersion>0.1.7.0</FileVersion>
+    <AssemblyVersion>0.1.8.0</AssemblyVersion>
+    <FileVersion>0.1.8.0</FileVersion>
     <Description>Eine Zusammenführung meiner oft genutzten Programmsourcen für WPF Anwendungen.
 Einige Komponenten habe ich noch nicht hinzugefügt und werden noch evaluiert.
 
@@ -28,6 +28,8 @@ Written and tested with .NET 5.</Description>
     <RepositoryType>Github</RepositoryType>
     <PackageTags>WPF;</PackageTags>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <LangVersion>10</LangVersion>
+    <PackageVersion>0.1.8.0</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
