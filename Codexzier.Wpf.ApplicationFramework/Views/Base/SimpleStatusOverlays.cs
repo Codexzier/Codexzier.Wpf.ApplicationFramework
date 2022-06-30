@@ -10,7 +10,7 @@ namespace Codexzier.Wpf.ApplicationFramework.Views.Base
     {
         public static int MessageBoxChannel = 101;
         public static int ActivityChannel = 100;
-        
+
         public static void Show(string title, string message)
         {
             Application.Current.Dispatcher.Invoke(delegate
