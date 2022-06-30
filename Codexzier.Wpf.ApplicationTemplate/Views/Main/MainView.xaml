@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:main="clr-namespace:Codexzier.Wpf.ApplicationTemplate.Views.Main"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="500" d:DesignWidth="300">
     <UserControl.DataContext>
         <main:MainViewModel />
     </UserControl.DataContext>
@@ -38,6 +38,9 @@
             
             <TextBlock Text="{Binding Value1}" />
             <TextBox Text="{Binding Value1}" />
+
+            <TextBlock Text="ReadOnly" />
+            <TextBox Text="{Binding Value1}" IsReadOnly="True" />
         </StackPanel>
     </Grid>
 </UserControl>

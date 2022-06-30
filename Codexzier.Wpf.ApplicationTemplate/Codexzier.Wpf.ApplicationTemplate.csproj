@@ -8,11 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Codexzier.Wpf.ApplicationFramework" Version="0.1.7" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Codexzier.Wpf.ApplicationFramework\Codexzier.Wpf.ApplicationFramework.csproj" />
     </ItemGroup>
 
 </Project>
