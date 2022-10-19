@@ -6,7 +6,8 @@ Auch eine Dokumentation werde ich anlegen, damit die einsetzbaren Komponeten und
 Diese Bibliothek ist dazu da meine Anwendungen nach und nach das selbe Aussehen zu vergeben. Meine Privaten erstellten Programme nutzen immer wieder einen ähnlichen Aufbau und daher fasste ich den Entschluss die Grundlagen zusammen zuführen. Mit jeder neuen Anwendund die ich schreibe, kommen neue Steuerelemente hinzu. Aber auch verbesserungen in der Bedienung.
 
 ## Framework Version
-Aktuell wird .NET 5 verwendet.
+Aktuell wird seit dem 19 Juni 2022 .NET 6 verwendet.
+Begonnen hat das Projekt mit .NET Core 3.1
 
 ## In arbeit
 Dokumentationsbeschreibung
